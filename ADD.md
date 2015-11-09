@@ -19,6 +19,8 @@ The app will then run silently in the background. At any time, users may open th
 
 For the user that triggered the alert, a notification will pop up letting them know that they have left the group, along with a message box so that they can message the other group members--for instance, to say "I'm heading home" so that the other group members dont have to worry.  
 
+When users receive an alert that a friend has left the group, the notification will take them to a map that shows that missing user's current location.  They will also be presented with the ability to call, message (within the app), or text (in iMessage) to make sure that they are okay.  
+
 
 ##Technical
 
