@@ -1,30 +1,43 @@
 #App Design Document 
 
-GroupSafe -- by Mike Kane
+Artifact -
 
 
 ##Objective
 
-GroupSafe is an app that allows groups of people to travel safely and receive a notification when any group member gets to far away from the group. 
+Create a mobile application that allows teachers to categorize assignments according to common core standards, allowing easy creation of a student portfolio of work.
 
 ##Audience
 
-GroupSafe's primary target audience is men and women in their 20s that like to go out together to social events, such as bar hopping or to a large concert where the group still wants to stick together. 
+When a student fails to show appropriate Annual Yearly Progress (AYP) on standardized tests, the school may submit a portfolio of the student's work showing examples of student performance that meets all appropriate standards.  This app is meant to help teachers and administrators easily track and categorize student work by linking the work to appropriate standards.  This will allow teachers and administrators to select the most effective examples of student work while also cutting down the overall time it takes to organize the student portfolio.
 
 ##Experience
 
-When users open the app, they will be prompted to either create a group, or join a group by entering a group code.  The first user will create the group, which will generate a group code.  This user will also specify a maximum distance users can get from the center of the group before an alert goes out.  They will give this group code to their friends, who will then join the group as well.  Users will then enter optional contact info, such as a phone number.  
+Upon sign in, users will be presented with a table view of their current classes (the "Dashboard").  If they have no current classes, they will be prompted to create a new class and add students to it.  When creating a class, teachers will choose the appropriate subject and grade level standards to attach to the class, along with any other relevant information.  
 
-The app will then run silently in the background. At any time, users may open the app and see a localized map of the group, and where all other groups members are in relationship to them. If any user gets farther from the group than the maximum specified distance, the app will alert them that they have left the group.  An alert will be sent out to all users in the group letting them know that user is longer physically near the group.  
+Once class setup is complete, teachers create profiles for each student, or import the class list as a comma-delimited spreadsheet.  Teachers will then be prompted to any necessary qualifiers to each student profile (for instance, label a student as an ELL or attach an appropriate IEP).  
 
-For the user that triggered the alert, a notification will pop up letting them know that they have left the group, along with a message box so that they can message the other group members--for instance, to say "I'm heading home" so that the other group members dont have to worry.  
+Once all student profiles are created, users will then be returned to the dashboard.  From here, users may view a class, create a new class (repeating the previous process), or create an assignment.  
 
-When users receive an alert that a friend has left the group, the notification will take them to a map that shows that missing user's current location.  They will also be presented with the ability to call, message (within the app), or text (in iMessage) to make sure that they are okay.  
+The "Create Assignment" screen will allow users to create an assignment.  On this screen, users will be prompted to upload the assignment (by file, or by taking a picture with the iPad camera).  Users will then link this file to the appropriate standards for that grade level.  The Following screen will then allow the user to choose what class(es) receive the assignment.  Users may also link assignments to students on an individual basis.  Once assigned, users will be returned to the Dashboard.  
+
+From the dashboard, if a user clicks on a a class cell, they will open a view showing all the students in the class.  If a user clicks on a student, this will show the current state of their portfolio by standard ("Student Portfolio Overview screen").  Standards that have been met (student work attached) will be tinted green.  Standards that have not yet had student work attached will be plain white cells.  Clicking on a standard will bring up view that shows the assignment along with the student work.  At the bottom of the Student Portfolio Overview scroll view, there is a button to generate the student portfolio.  If the student portfolio is not yet complete, this button will be greyed-out, and a small text label will inform the user that they cannot generate an incomplete portfolio.
+
+
 
 
 ##Technical
 
 ####External Services
+
+Box SDK
+CommonStandards API (http://beta.commonstandardsproject.com/developers)
+Gloss
+AlamoFire
+Realm
+Parse
+
+
 
 ####Screens
 
@@ -32,4 +45,13 @@ When users receive an alert that a friend has left the group, the notification w
 
 ####Data Models
 
+Teacher
+Class
+Student
+Assignment
+Standard
+Portfolio
+
 ##MVP Milestones
+
+end of Week 1:  Complete storyboard layout
