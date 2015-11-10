@@ -1,6 +1,6 @@
 #App Design Document 
 
-Artifact -
+Actionable -
 
 
 ##Objective
@@ -54,4 +54,7 @@ Portfolio
 
 ##MVP Milestones
 
-end of Week 1:  Complete storyboard layout
+11/12 -- Finish Screens Layout
+11/13 -- Finish ADD
+11/18 -- Finish creating storyboard
+11/20 -- Finish dummy implementation of app (all views, segues, etc)
