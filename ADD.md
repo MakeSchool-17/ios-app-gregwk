@@ -37,11 +37,16 @@ AlamoFire
 Realm
 Parse
 
+Research-- do I need to use the API, or can I just pull the data base from other open source apps?
+
 
 
 ####Screens
 
+
+
 ####Views / View Controllers/ Classes
+
 
 ####Data Models
 
@@ -54,7 +59,14 @@ Portfolio
 
 ##MVP Milestones
 
-11/12 -- Finish Screens Layout
-11/13 -- Finish ADD
-11/18 -- Finish creating storyboard
-11/20 -- Finish dummy implementation of app (all views, segues, etc)
+Current step-- product research.  Speaking to Principals, District Coordinators, trying to find out where I can information about how portfolio exemptions work state-by-state, county by county, without having to make a ton of phone calls.
+
+Concurrently figuring out how to use Sketch, getting practice on table views, segues, and other areas of iOS where my understanding is weak.
+
+-- Next Steps -- 
+
+Finish designing UI for Actionable  (reached out to Jacob for help with this)
+learn how to use Parse (reached out to Josh for help with this)
+Begin creating UI in Xcode.
+
+
