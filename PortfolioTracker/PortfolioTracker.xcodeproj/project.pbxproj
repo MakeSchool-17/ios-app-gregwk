@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E48893AB1C03FE200054992F /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48893AA1C03FE200054992F /* LoginScreenViewController.swift */; };
+		E4A03F6D1C0BB7A0009F3DCE /* Drawing.png in Resources */ = {isa = PBXBuildFile; fileRef = E4A03F6C1C0BB7A0009F3DCE /* Drawing.png */; };
 		E4E0D4C71C04144E000BCC1D /* ClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E0D4C61C04144E000BCC1D /* ClassesViewController.swift */; };
 		E4E0D4C91C0517A2000BCC1D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E0D4C81C0517A2000BCC1D /* SignUpViewController.swift */; };
 		E4E0D4CB1C0517B7000BCC1D /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E0D4CA1C0517B7000BCC1D /* ForgotPasswordViewController.swift */; };
@@ -24,6 +25,7 @@
 		734B906DDA97765A9504343C /* Pods-PortfolioTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortfolioTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PortfolioTracker/Pods-PortfolioTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		E444D0431C06D8690052D6EA /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		E48893AA1C03FE200054992F /* LoginScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
+		E4A03F6C1C0BB7A0009F3DCE /* Drawing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Drawing.png; sourceTree = "<group>"; };
 		E4E0D4C61C04144E000BCC1D /* ClassesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesViewController.swift; sourceTree = "<group>"; };
 		E4E0D4C81C0517A2000BCC1D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E4E0D4CA1C0517B7000BCC1D /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E4A03F6B1C0BB78C009F3DCE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E4A03F6C1C0BB7A0009F3DCE /* Drawing.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		E4ECCE581C03BA38002D089C = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +97,7 @@
 		E4ECCE631C03BA38002D089C /* PortfolioTracker */ = {
 			isa = PBXGroup;
 			children = (
+				E4A03F6B1C0BB78C009F3DCE /* Images */,
 				E4ECCE7A1C03BA5D002D089C /* Models */,
 				E4ECCE791C03BA55002D089C /* View Controllers */,
 				E4ECCE641C03BA38002D089C /* AppDelegate.swift */,
@@ -182,6 +193,7 @@
 			files = (
 				E4ECCE721C03BA38002D089C /* LaunchScreen.storyboard in Resources */,
 				E4ECCE6F1C03BA38002D089C /* Assets.xcassets in Resources */,
+				E4A03F6D1C0BB7A0009F3DCE /* Drawing.png in Resources */,
 				E4ECCE6A1C03BA38002D089C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

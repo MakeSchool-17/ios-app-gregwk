@@ -20,38 +20,29 @@ class LoginScreenViewController: UIViewController {
     
     @IBAction func signInButtonPressed(sender: AnyObject) {
         
-        let username = userNameTextField?.text
-        let password = userNameTextField?.text
-        
-        if let username  = username, password = password {
-            PFUser.logInWithUsernameInBackground(username, password: password) {
-                (user: PFUser?, error: NSError?) -> Void in
-                if user != nil {
-                    
-                } else {
-                    
-                    self.warningLabel.text = "invalid login credentials"
-                    self.warningLabel.hidden = false
-                    
-                }
+        if let username = userNameTextField?.text where username != "" {
+            if let password = passwordTextField?.text where password != "" {
+                 login(username, password: password)
+            } else {
+                self.warningLabel.text = "The password field is empty!"
             }
         } else {
-            
-            warningLabel.text = "fields are empty!"
-            warningLabel.hidden = false
-            
+            self.warningLabel.text = "The username field is empty!"
         }
+        
+        
         
     }
    
  
     @IBAction func signUpButtonPressed(sender: AnyObject) {
-        
+        //performs modal segue to SignUpViewController
     }
     
     
     @IBAction func forgotPasswordButtonPressed(sender: AnyObject) {
-        
+        //performs modal segue to ForgotPasswordViewController
+        //***NOTE: Still need to build ^^this^^ VC!***
     }
     
     
@@ -64,3 +55,32 @@ class LoginScreenViewController: UIViewController {
     }
     
 }
+
+extension LoginScreenViewController {
+    
+    func login(username: String, password: String) {
+        let user = PFUser()
+        //check optional status BEFORE this function is called!
+        user.username = username
+        user.password = password
+        
+        PFUser.logInWithUsernameInBackground(user.username!, password: user.password!, block:{
+            (user: PFUser?, error: NSError?) -> Void in
+            
+            if error == nil {
+                dispatch_async(dispatch_get_main_queue()){
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let dashboardVC: UIViewController = storyboard.instantiateViewControllerWithIdentifier("dashboardViewController")
+                    
+                    self.presentViewController(dashboardVC, animated: true, completion: nil)
+                
+            }
+            } else {
+                print("login failed")
+            }
+        
+    })
+}
+
+}
+
