@@ -67,14 +67,17 @@ Portfolio
     build basic UI
     set up cocoapods 
     implement Parse sign up in SignUpViewController
+    implemented login using Parse
+    finished LoginViewController
     
-
 
 --Next Milestones--
 
-    Implement login using parse
-    finish loginViewController
+    
+    debug warningLabel for loginViewController (not detecting nil inputs)
     Begin working on table views
+    design CreateNewAssignmentViewController
+    Learn how to use CommonStandards API to populate CreateNewAssignmentViewController with standards data (write down specific questions for instructors)
     Finish data model (talk to instructors about this)
     
 
