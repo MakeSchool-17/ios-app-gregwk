@@ -54,19 +54,30 @@ Teacher
 Class
 Student
 Assignment
+Student Work
 Standard
 Portfolio
 
 ##MVP Milestones
 
-Current step-- product research.  Speaking to Principals, District Coordinators, trying to find out where I can information about how portfolio exemptions work state-by-state, county by county, without having to make a ton of phone calls.
+--Completed Milestones--
+    
+    product research
+    overall UX design
+    build basic UI
+    set up cocoapods 
+    implement Parse sign up in SignUpViewController
+    
 
-Concurrently figuring out how to use Sketch, getting practice on table views, segues, and other areas of iOS where my understanding is weak.
 
--- Next Steps -- 
+--Next Milestones--
 
-Finish designing UI for Actionable  (reached out to Jacob for help with this)
-learn how to use Parse (reached out to Josh for help with this)
-Begin creating UI in Xcode.
+    Implement login using parse
+    finish loginViewController
+    Begin working on table views
+    Finish data model (talk to instructors about this)
+    
+
+
 
 
