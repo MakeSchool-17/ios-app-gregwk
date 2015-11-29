@@ -1,0 +1,6 @@
+framework module box_ios_sdk_v2 {
+  umbrella header "box-ios-sdk-v2-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (3.1.3)
+  - Bolts/Tasks (1.5.0)
+  - box-ios-sdk-v2 (1.2.2):
+    - box-ios-sdk-v2/no-arc (= 1.2.2)
+  - box-ios-sdk-v2/no-arc (1.2.2)
+  - Gloss (0.6.1)
+  - Parse (1.10.0):
+    - Bolts/Tasks (~> 1.5)
+  - Realm (0.96.2):
+    - Realm/Headers (= 0.96.2)
+  - Realm/Headers (0.96.2)
+  - RealmSwift (0.96.2):
+    - Realm (= 0.96.2)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.1.3)
+  - box-ios-sdk-v2 (~> 1.2.2)
+  - Gloss (~> 0.6.1)
+  - Parse
+  - RealmSwift
+
+SPEC CHECKSUMS:
+  Alamofire: 9f93b56389e48def9220dd57d1f44b1927229a5a
+  Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
+  box-ios-sdk-v2: 9916d797ac247b366f7d03de42ed82d223183e96
+  Gloss: c8a57b5fb78e178a90d277aa9881fc6fa906fb82
+  Parse: 90b2544822200f84b18bfacc4e8b0a3a6c3584a2
+  Realm: 3ce8448151c571e90b85002d984d7f93f54fc8a3
+  RealmSwift: 485599fe54e35461c4a0daa7d01d8fbf11424873
+
+COCOAPODS: 0.39.0
