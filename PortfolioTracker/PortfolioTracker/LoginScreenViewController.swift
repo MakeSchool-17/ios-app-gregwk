@@ -41,8 +41,7 @@ class LoginScreenViewController: UIViewController {
     
     
     @IBAction func forgotPasswordButtonPressed(sender: AnyObject) {
-        //performs modal segue to ForgotPasswordViewController
-        //***NOTE: Still need to build ^^this^^ VC!***
+        performSegueWithIdentifier("forgotPasswordSegue", sender: nil)
     }
     
     

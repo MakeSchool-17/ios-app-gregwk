@@ -10,7 +10,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="5aj-JH-wln">
             <objects>
-                <viewController id="nuN-n6-kBb" customClass="SignUpViewController" customModule="PortfolioTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signUpViewController" id="nuN-n6-kBb" customClass="SignUpViewController" customModule="PortfolioTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tUI-EO-txS"/>
                         <viewControllerLayoutGuide type="bottom" id="thf-zh-jbR"/>
@@ -148,12 +148,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y6b-Et-Q7i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55" y="1432"/>
+            <point key="canvasLocation" x="-305" y="1432"/>
         </scene>
         <!--Login Screen View Controller-->
         <scene sceneID="F2u-fE-dxo">
             <objects>
-                <viewController id="KgG-Mt-T7S" customClass="LoginScreenViewController" customModule="PortfolioTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" id="KgG-Mt-T7S" customClass="LoginScreenViewController" customModule="PortfolioTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jWO-Nf-Xm9"/>
                         <viewControllerLayoutGuide type="bottom" id="7HF-gS-BjN"/>
@@ -188,7 +188,7 @@
                                 </state>
                                 <connections>
                                     <action selector="signUpButtonPressed:" destination="KgG-Mt-T7S" eventType="touchUpInside" id="Acl-ID-KM0"/>
-                                    <segue destination="nuN-n6-kBb" kind="presentation" id="bpI-D5-ryK"/>
+                                    <segue destination="nuN-n6-kBb" kind="presentation" identifier="SignUpSegue" id="bpI-D5-ryK"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="anM-NW-Ffm">
@@ -220,7 +220,7 @@
                                 <connections>
                                     <action selector="forgotPassword:" destination="KgG-Mt-T7S" eventType="touchUpInside" id="znf-qR-6CK"/>
                                     <action selector="forgotPasswordButtonPressed:" destination="KgG-Mt-T7S" eventType="touchUpInside" id="SSF-Ya-oFi"/>
-                                    <segue destination="GHB-cf-3XL" kind="presentation" id="KJw-Xt-DNC"/>
+                                    <segue destination="GHB-cf-3XL" kind="presentation" id="b9x-rR-QI4"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Drawing.png" translatesAutoresizingMaskIntoConstraints="NO" id="McW-UG-edJ">
@@ -279,7 +279,7 @@
         <!--Forgot Password View Controller-->
         <scene sceneID="ahv-fd-2OR">
             <objects>
-                <viewController id="GHB-cf-3XL" customClass="ForgotPasswordViewController" customModule="PortfolioTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="forgotPasswordViewController" id="GHB-cf-3XL" customClass="ForgotPasswordViewController" customModule="PortfolioTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0fh-t0-mfB"/>
                         <viewControllerLayoutGuide type="bottom" id="QjN-Pf-FWL"/>
@@ -287,18 +287,89 @@
                     <view key="view" contentMode="scaleToFill" id="Yrz-La-Mni">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfF-k3-sHD">
+                                <rect key="frame" x="20" y="153" width="984" height="20"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot your password?  Please enter your email below:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acc-Pt-0FF">
+                                <rect key="frame" x="20" y="43" width="984" height="34"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yQH-ym-VvS">
+                                <rect key="frame" x="304" y="181" width="416" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbm-n7-6Mf">
+                                <rect key="frame" x="304" y="219" width="205" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.31394318490000001" blue="0.36899824139999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="205" id="YCe-J0-m9k"/>
+                                </constraints>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.96656168190000002" green="0.96656168190000002" blue="0.96656168190000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="nuN-n6-kBb" eventType="touchUpInside" id="QZw-A4-kSO"/>
+                                    <action selector="cancelButtonPressed:" destination="GHB-cf-3XL" eventType="touchUpInside" id="XRM-b2-3pW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojc-ua-oAF">
+                                <rect key="frame" x="515" y="219" width="205" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.29024170290000001" green="0.94786894629999996" blue="0.25954103090000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="205" id="Gy3-sP-n5c"/>
+                                </constraints>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="0.96292130239999996" green="0.96292130239999996" blue="0.96292130239999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.14561905829999999" green="0.46023472329999998" blue="0.96292130239999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="nuN-n6-kBb" eventType="touchUpInside" id="M21-Dl-XgN"/>
+                                    <action selector="submitButtonPressed:" destination="GHB-cf-3XL" eventType="touchUpInside" id="buI-qN-J5I"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.57079236020000002" green="0.78090268029999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gbm-n7-6Mf" firstAttribute="leading" secondItem="yQH-ym-VvS" secondAttribute="leading" id="BfD-YY-Y4D"/>
+                            <constraint firstItem="ojc-ua-oAF" firstAttribute="leading" secondItem="gbm-n7-6Mf" secondAttribute="trailing" constant="6" id="Gtv-9Q-End"/>
+                            <constraint firstItem="gbm-n7-6Mf" firstAttribute="top" secondItem="yQH-ym-VvS" secondAttribute="bottom" constant="8" symbolic="YES" id="HL7-E1-FKR"/>
+                            <constraint firstItem="acc-Pt-0FF" firstAttribute="leading" secondItem="Yrz-La-Mni" secondAttribute="leadingMargin" id="J5Z-YE-Kzm"/>
+                            <constraint firstItem="acc-Pt-0FF" firstAttribute="leading" secondItem="mfF-k3-sHD" secondAttribute="leading" id="VIJ-8W-ns5"/>
+                            <constraint firstItem="mfF-k3-sHD" firstAttribute="trailing" secondItem="Yrz-La-Mni" secondAttribute="trailingMargin" id="XRv-7k-L3J"/>
+                            <constraint firstItem="mfF-k3-sHD" firstAttribute="centerX" secondItem="yQH-ym-VvS" secondAttribute="centerX" id="dby-BZ-DVD"/>
+                            <constraint firstItem="mfF-k3-sHD" firstAttribute="top" secondItem="acc-Pt-0FF" secondAttribute="bottom" constant="76" id="eHM-9t-sk8"/>
+                            <constraint firstItem="yQH-ym-VvS" firstAttribute="top" secondItem="mfF-k3-sHD" secondAttribute="bottom" constant="8" symbolic="YES" id="h75-B1-zh1"/>
+                            <constraint firstItem="gbm-n7-6Mf" firstAttribute="baseline" secondItem="ojc-ua-oAF" secondAttribute="baseline" id="idg-1q-oDq"/>
+                            <constraint firstItem="yQH-ym-VvS" firstAttribute="trailing" secondItem="ojc-ua-oAF" secondAttribute="trailing" id="jiC-Ka-h0z"/>
+                            <constraint firstItem="acc-Pt-0FF" firstAttribute="top" secondItem="0fh-t0-mfB" secondAttribute="bottom" constant="23" id="rvz-oa-EW5"/>
+                            <constraint firstItem="mfF-k3-sHD" firstAttribute="trailing" secondItem="acc-Pt-0FF" secondAttribute="trailing" id="sOw-G7-R9q"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="yQH-ym-VvS" id="dj7-dx-pQP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YeB-AV-2Mf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1176" y="1432"/>
+            <point key="canvasLocation" x="770" y="1432"/>
         </scene>
         <!--Classes-->
         <scene sceneID="HO3-80-cbL">
             <objects>
-                <viewController id="WKB-qn-QXv" customClass="ClassesViewController" customModule="PortfolioTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="classesTabViewController" id="WKB-qn-QXv" customClass="ClassesViewController" customModule="PortfolioTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bIX-IA-Ka3"/>
                         <viewControllerLayoutGuide type="bottom" id="v87-Oi-bSK"/>
@@ -312,7 +383,11 @@
                                 <animations/>
                                 <items>
                                     <navigationItem title="Current Classes" id="8mO-oN-gr0">
-                                        <barButtonItem key="rightBarButtonItem" title="Add New Class" id="lla-Q9-CcO"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Add New Class" id="lla-Q9-CcO">
+                                            <connections>
+                                                <segue destination="7Xm-6k-DBW" kind="presentation" id="vYP-6q-1uN"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -338,12 +413,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y1B-2m-bVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2639" y="941"/>
+            <point key="canvasLocation" x="3093" y="1321"/>
         </scene>
         <!--Portfolio View-->
         <scene sceneID="6gK-xJ-KEq">
             <objects>
-                <viewController id="XCf-nQ-A8h" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="portfolioListViewController" id="XCf-nQ-A8h" customClass="PortfolioDashboardViewController" customModule="PortfolioTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BJa-qA-vMN"/>
                         <viewControllerLayoutGuide type="bottom" id="GsM-Oh-u3y"/>
@@ -356,7 +431,7 @@
                                 <rect key="frame" x="0.0" y="1" width="1024" height="44"/>
                                 <animations/>
                                 <items>
-                                    <navigationItem title="Student Portfolio Progress" id="Kwq-Cg-gMF"/>
+                                    <navigationItem title="Portfolio View | All Students" id="Kwq-Cg-gMF"/>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zgY-3d-ys7">
@@ -381,12 +456,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p1l-xd-foz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2639" y="1816"/>
+            <point key="canvasLocation" x="2885" y="2678"/>
         </scene>
         <!--Assignments-->
         <scene sceneID="fJp-2i-IpV">
             <objects>
-                <viewController id="uqq-gf-vN0" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="assignmentTabViewController" id="uqq-gf-vN0" customClass="AssignmentsListViewController" customModule="PortfolioTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0r7-nq-gIP"/>
                         <viewControllerLayoutGuide type="bottom" id="uEE-l6-EFu"/>
@@ -414,7 +489,11 @@
                                 <animations/>
                                 <items>
                                     <navigationItem title="Assignments Created" id="3nW-W0-kjC">
-                                        <barButtonItem key="rightBarButtonItem" title="Create New Assignment" id="DwC-Wp-UvA"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Create New Assignment" id="DwC-Wp-UvA">
+                                            <connections>
+                                                <segue destination="0iv-wa-HYM" kind="presentation" id="nNk-2F-gDe"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -438,7 +517,72 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nys-NW-Tbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2639" y="83"/>
+            <point key="canvasLocation" x="2989" y="-347"/>
+        </scene>
+        <!--Create New Class View Controller-->
+        <scene sceneID="NWo-Vw-Eto">
+            <objects>
+                <viewController storyboardIdentifier="createNewClassViewController" id="7Xm-6k-DBW" customClass="CreateNewClassViewController" customModule="PortfolioTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JQc-Td-eGv"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nml-HN-CdY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1et-bF-RuT">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="keK-SL-2LP">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="Create New Class" id="f51-6Q-3cN">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="3bZ-to-wyP"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Save" id="3ag-tg-Ndk"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.57079236020000002" green="0.78090268029999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZpA-zb-teN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4459" y="672"/>
+        </scene>
+        <!--Create New Assignment View Controller-->
+        <scene sceneID="dKi-8D-veY">
+            <objects>
+                <viewController storyboardIdentifier="createNewAssignmentViewController" id="0iv-wa-HYM" customClass="CreateNewAssignmentViewController" customModule="PortfolioTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aXz-16-lBH"/>
+                        <viewControllerLayoutGuide type="bottom" id="LFX-Dl-YNK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dK4-6l-KfW">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hv4-lR-DZp">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="Create New Assignment" id="8gK-rL-LFZ">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="OLt-4e-YgJ"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.57079236020000002" green="0.78090268029999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RlX-7T-1Yc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4363" y="-1241"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="44x-QR-f61">
@@ -460,7 +604,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o0t-rX-t7h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1399" y="476"/>
+            <point key="canvasLocation" x="1583" y="316"/>
         </scene>
     </scenes>
     <resources>

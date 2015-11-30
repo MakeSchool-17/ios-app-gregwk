@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		E48893AB1C03FE200054992F /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48893AA1C03FE200054992F /* LoginScreenViewController.swift */; };
 		E4A03F6D1C0BB7A0009F3DCE /* Drawing.png in Resources */ = {isa = PBXBuildFile; fileRef = E4A03F6C1C0BB7A0009F3DCE /* Drawing.png */; };
+		E4A03F6F1C0CAB50009F3DCE /* CreateNewClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A03F6E1C0CAB50009F3DCE /* CreateNewClassViewController.swift */; };
+		E4A03F711C0CABB7009F3DCE /* CreateNewAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A03F701C0CABB7009F3DCE /* CreateNewAssignmentViewController.swift */; };
+		E4A03F731C0CAD27009F3DCE /* PortfolioDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A03F721C0CAD27009F3DCE /* PortfolioDashboardViewController.swift */; };
+		E4A03F751C0CADE3009F3DCE /* AssignmentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A03F741C0CADE3009F3DCE /* AssignmentsListViewController.swift */; };
 		E4E0D4C71C04144E000BCC1D /* ClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E0D4C61C04144E000BCC1D /* ClassesViewController.swift */; };
 		E4E0D4C91C0517A2000BCC1D /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E0D4C81C0517A2000BCC1D /* SignUpViewController.swift */; };
 		E4E0D4CB1C0517B7000BCC1D /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E0D4CA1C0517B7000BCC1D /* ForgotPasswordViewController.swift */; };
@@ -26,6 +30,10 @@
 		E444D0431C06D8690052D6EA /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		E48893AA1C03FE200054992F /* LoginScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
 		E4A03F6C1C0BB7A0009F3DCE /* Drawing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Drawing.png; sourceTree = "<group>"; };
+		E4A03F6E1C0CAB50009F3DCE /* CreateNewClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewClassViewController.swift; sourceTree = "<group>"; };
+		E4A03F701C0CABB7009F3DCE /* CreateNewAssignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewAssignmentViewController.swift; sourceTree = "<group>"; };
+		E4A03F721C0CAD27009F3DCE /* PortfolioDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortfolioDashboardViewController.swift; sourceTree = "<group>"; };
+		E4A03F741C0CADE3009F3DCE /* AssignmentsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentsListViewController.swift; sourceTree = "<group>"; };
 		E4E0D4C61C04144E000BCC1D /* ClassesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassesViewController.swift; sourceTree = "<group>"; };
 		E4E0D4C81C0517A2000BCC1D /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E4E0D4CA1C0517B7000BCC1D /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +126,10 @@
 				E4E0D4C61C04144E000BCC1D /* ClassesViewController.swift */,
 				E4E0D4C81C0517A2000BCC1D /* SignUpViewController.swift */,
 				E4E0D4CA1C0517B7000BCC1D /* ForgotPasswordViewController.swift */,
+				E4A03F6E1C0CAB50009F3DCE /* CreateNewClassViewController.swift */,
+				E4A03F701C0CABB7009F3DCE /* CreateNewAssignmentViewController.swift */,
+				E4A03F721C0CAD27009F3DCE /* PortfolioDashboardViewController.swift */,
+				E4A03F741C0CADE3009F3DCE /* AssignmentsListViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -253,11 +265,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4A03F711C0CABB7009F3DCE /* CreateNewAssignmentViewController.swift in Sources */,
+				E4A03F6F1C0CAB50009F3DCE /* CreateNewClassViewController.swift in Sources */,
 				E4ECCE6D1C03BA38002D089C /* PortfolioTracker.xcdatamodeld in Sources */,
+				E4A03F751C0CADE3009F3DCE /* AssignmentsListViewController.swift in Sources */,
 				E4ECCE651C03BA38002D089C /* AppDelegate.swift in Sources */,
 				E4E0D4CB1C0517B7000BCC1D /* ForgotPasswordViewController.swift in Sources */,
 				E48893AB1C03FE200054992F /* LoginScreenViewController.swift in Sources */,
 				E4E0D4C71C04144E000BCC1D /* ClassesViewController.swift in Sources */,
+				E4A03F731C0CAD27009F3DCE /* PortfolioDashboardViewController.swift in Sources */,
 				E4E0D4C91C0517A2000BCC1D /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
