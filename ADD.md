@@ -69,12 +69,18 @@ Portfolio
     implement Parse sign up in SignUpViewController
     implemented login using Parse
     finished LoginViewController
+    finished basic layout for ForgotPasswordViewController
     
 
 --Next Milestones--
 
+    --debugging--
+        warning label for LoginViewController doesn't appear on empty inputs
+        segue from loginVC to forgotPasswordVC crashes the app
+        
+
     
-    debug warningLabel for loginViewController (not detecting nil inputs)
+    
     Begin working on table views
     design CreateNewAssignmentViewController
     Learn how to use CommonStandards API to populate CreateNewAssignmentViewController with standards data (write down specific questions for instructors)
