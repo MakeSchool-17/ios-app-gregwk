@@ -70,13 +70,13 @@ Portfolio
     implemented login using Parse
     finished LoginViewController
     finished basic layout for ForgotPasswordViewController
-    
+    debugging: Segue from loginVC to forgotPasswordVC now works correctly
 
 --Next Milestones--
 
     --debugging--
         warning label for LoginViewController doesn't appear on empty inputs
-        segue from loginVC to forgotPasswordVC crashes the app
+        
         
 
     
