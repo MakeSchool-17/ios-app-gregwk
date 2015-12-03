@@ -1,4 +1,4 @@
-#App Design Document 
+#App Design Document
 
 Actionable -
 
@@ -51,41 +51,71 @@ Research-- do I need to use the API, or can I just pull the data base from other
 ####Data Models
 
 Teacher
-Class
+    properties:
+        classroom -- Classroom object
+
+
+Classroom
+    properties:
+        studentRoster -- array of student objects
+        subject -- string
+        standards -- array of standards
+        assignments -- array of Assignment objects
+
+
 Student
+    properties:
+        firstName -- String
+        lastName -- String
+        assignments -- Assignment Object
+        portfolio -- Portfolio Object
+
 Assignment
-Student Work
-Standard
-Portfolio
+    properties:
+        standard -- string
+        studentWork -- file
+
+
+
+
+
+
 
 ##MVP Milestones
 
 --Completed Milestones--
-    
+
     product research
     overall UX design
     build basic UI
-    set up cocoapods 
+    set up cocoapods
     implement Parse sign up in SignUpViewController
     implemented login using Parse
     finished LoginViewController
     finished basic layout for ForgotPasswordViewController
     debugging: Segue from loginVC to forgotPasswordVC now works correctly
+    designed data models
+    created data models in Parse
 
 --Next Milestones--
 
+    update SignUpViewController to get full info from Teacher
+    create newAssignmentViewController
+    create newClassViewController
+    
+
     --debugging--
         warning label for LoginViewController doesn't appear on empty inputs
-        
-        
 
-    
-    
+
+
+
+
     Begin working on table views
     design CreateNewAssignmentViewController
     Learn how to use CommonStandards API to populate CreateNewAssignmentViewController with standards data (write down specific questions for instructors)
     Finish data model (talk to instructors about this)
-    
+
 
 ## Copyright notes
 
@@ -94,9 +124,3 @@ list of all copyrighted material used in app
 current book icon on LoginViewController:
 
 Book graphic by <a href="http://www.freepik.com/">Freepik</a> from <a href="http://www.flaticon.com/">Flaticon</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>. Made with <a href="http://logomakr.com" title="Logo Maker">Logo Maker</a>
-
-
-
-
-
-
