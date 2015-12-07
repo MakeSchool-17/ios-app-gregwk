@@ -96,13 +96,15 @@ Assignment
     debugging: Segue from loginVC to forgotPasswordVC now works correctly
     designed data models
     created data models in Parse
+    Finished SignUpViewController
 
 --Next Milestones--
 
-    update SignUpViewController to get full info from Teacher
+    create custom buttons/views for assignment creation UI
+    finish mapping out assignment creation workflow
     create newAssignmentViewController
     create newClassViewController
-    
+
 
     --debugging--
         warning label for LoginViewController doesn't appear on empty inputs
