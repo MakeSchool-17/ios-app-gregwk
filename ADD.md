@@ -97,17 +97,28 @@ Assignment
     designed data models
     created data models in Parse
     Finished SignUpViewController
+    Created rough map of assignment creation workflow
+    Finished full map of assignments Tab Workflow
+    Created rough map of Classes tab workflow
+    Assigned ViewControllers to all new Views on the storyboard
+    Added working back buttons to ALL nav bars
+    Finished General UI Layout/Workflow for all tabs except Portfolio View.
+    Added validation checks to textfields on CreateStudentsForClass VC.  They even fade out!
 
 --Next Milestones--
 
-    create custom buttons/views for assignment creation UI
-    finish mapping out assignment creation workflow
-    create newAssignmentViewController
-    create newClassViewController
+    Begin Parsing JSON files from Common Standards Project.
+    Begin implementing Table Views on all necessary pages
+    Create full data models in swift
+    Replace dummy implementations on creation pages with ones that create actual objects, save to Parse/Realm
+    Server Synchronization.  NBD.
+    
+    
 
 
     --debugging--
         warning label for LoginViewController doesn't appear on empty inputs
+        Scroll View doesnt adjust from open keyboard on LoginViewController 
 
 
 
@@ -131,3 +142,14 @@ Pictures used in buttons:
 
 http://www.morguefile.com/archive/display/3386 -- single pencil
 http://www.morguefile.com/archive/display/25519 -- multiple pencils
+
+JSON files of Common Core State Standards borrowed from Common Standards Github Page.  
+
+Fade in/Fade Out extensions learned from tutorial by Andrew Bancroft(https://www.andrewcbancroft.com/2014/07/27/fade-in-out-animations-as-class-extensions-with-swift/)
+
+Really sweet delay function by "@matt" found on SO (http://stackoverflow.com/questions/24034544/dispatch-after-gcd-in-swift/24318861#24318861)
+
+
+
+
+
