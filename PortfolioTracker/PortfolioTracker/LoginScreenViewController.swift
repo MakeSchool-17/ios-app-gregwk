@@ -9,8 +9,9 @@
 import UIKit
 import Parse
 
-class LoginScreenViewController: UIViewController {
+class LoginScreenViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var warningLabel: UILabel!
     
     @IBOutlet weak var userNameTextField: UITextField?
@@ -45,12 +46,18 @@ class LoginScreenViewController: UIViewController {
     }
     
     
+    func textFieldDidBeginEditing(textField: UITextField) {
+        scrollView.setContentOffset(CGPointMake(0, 250), animated: true)
+    }
     
+    func textFieldDidEndEditing(textField: UITextField) {
+        scrollView.setContentOffset(CGPointMake(0, 0), animated: true)
+    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
     }
     
 }
