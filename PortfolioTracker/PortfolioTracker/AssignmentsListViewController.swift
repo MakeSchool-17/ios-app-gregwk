@@ -8,28 +8,50 @@
 
 import UIKit
 
-class AssignmentsListViewController: UIViewController {
+class AssignmentsListViewController: UIViewController{
 
+
+    @IBOutlet weak var assignmentTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        assignmentTableView.delegate = self
+        assignmentTableView.dataSource = self
+        
     }
     
+    
+    
+    
+    
+}
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension AssignmentsListViewController: UITableViewDelegate, UITableViewDataSource  {
+ 
+    
+    
+     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("NoteCell", forIndexPath: indexPath) as! AssignmentTableViewCell 
+        let timestamp = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .ShortStyle, timeStyle: .ShortStyle)
+        
+        cell.assignmentNameLabel.text = "Assignment \(indexPath.row)"
+        cell.dateCreatedLabel.text = "\(timestamp)"
+        
+        return cell
+    
     }
-    */
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        let vc = IndividualAssignmentInfoViewController()
+        presentViewController(vc, animated: true, completion: nil)
+    }
 
 }

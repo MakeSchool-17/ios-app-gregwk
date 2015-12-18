@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         Parse.setApplicationId("x8nq38BcoFI2xhA8b8PGsbJfuaHY25FEwHBOkdEr", clientKey: "Ve9KJvCjYPt9SPBNBmrR65sk5aNh34OK74WgiaWH")
-        
+        let server = Server()
+        server.getJurisdictionIDsAsJSON()
         return true
     }
 

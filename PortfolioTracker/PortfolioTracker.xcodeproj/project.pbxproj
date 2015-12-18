@@ -11,12 +11,19 @@
 		E40A69F81C1A6FDD0041EEC4 /* TakePictureOfNewAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40A69F71C1A6FDD0041EEC4 /* TakePictureOfNewAssignmentViewController.swift */; };
 		E40A69FA1C1A7A940041EEC4 /* IndividualAssignmentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40A69F91C1A7A940041EEC4 /* IndividualAssignmentInfoViewController.swift */; };
 		E40A69FC1C1A7C220041EEC4 /* CameraRollOrCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40A69FB1C1A7C220041EEC4 /* CameraRollOrCameraViewController.swift */; };
+		E40A69FE1C1B92AB0041EEC4 /* SelectStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40A69FD1C1B92AB0041EEC4 /* SelectStudentsViewController.swift */; };
+		E40A6A001C1BA3370041EEC4 /* ViewStudentWorkForAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40A69FF1C1BA3370041EEC4 /* ViewStudentWorkForAssignmentViewController.swift */; };
+		E40A6A021C1BA4B30041EEC4 /* EditAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40A6A011C1BA4B30041EEC4 /* EditAssignmentViewController.swift */; };
+		E40E16BD1C1F56B600B0399D /* AssignmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E16BC1C1F56B600B0399D /* AssignmentTableViewCell.swift */; };
+		E40E16BF1C1F5DB500B0399D /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E16BE1C1F5DB500B0399D /* Assignment.swift */; };
+		E40E16C11C1F5DC000B0399D /* Classroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E16C01C1F5DC000B0399D /* Classroom.swift */; };
+		E40E16C31C1F5DC900B0399D /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40E16C21C1F5DC900B0399D /* Student.swift */; };
 		E45659871C1A414B008551E3 /* CreateStudentsForClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45659861C1A414B008551E3 /* CreateStudentsForClassViewController.swift */; };
 		E45659891C1A542A008551E3 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45659881C1A542A008551E3 /* UIViewExtensions.swift */; };
+		E45B46AC1C220CBA00F6FE64 /* StandardsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B46AB1C220CBA00F6FE64 /* StandardsManager.swift */; };
+		E45B46AF1C2361B400F6FE64 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B46AE1C2361B400F6FE64 /* Server.swift */; };
 		E46363F91C155F0F00D85472 /* assignment_by_class.png in Resources */ = {isa = PBXBuildFile; fileRef = E46363F71C155F0F00D85472 /* assignment_by_class.png */; };
 		E46363FA1C155F0F00D85472 /* assignment_by_student.png in Resources */ = {isa = PBXBuildFile; fileRef = E46363F81C155F0F00D85472 /* assignment_by_student.png */; };
-		E46363FE1C1655D500D85472 /* CC-literacy-0.8.0.json in Resources */ = {isa = PBXBuildFile; fileRef = E46363FC1C1655D500D85472 /* CC-literacy-0.8.0.json */; };
-		E46363FF1C1655D500D85472 /* CC-math-0.8.0.json in Resources */ = {isa = PBXBuildFile; fileRef = E46363FD1C1655D500D85472 /* CC-math-0.8.0.json */; };
 		E46364011C165A6500D85472 /* Standard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46364001C165A6500D85472 /* Standard.swift */; };
 		E46364031C17875F00D85472 /* SelectStandardForAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46364021C17875F00D85472 /* SelectStandardForAssignmentViewController.swift */; };
 		E46364051C178B7C00D85472 /* SelectAssigneesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46364041C178B7C00D85472 /* SelectAssigneesViewController.swift */; };
@@ -47,13 +54,20 @@
 		E40A69F71C1A6FDD0041EEC4 /* TakePictureOfNewAssignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePictureOfNewAssignmentViewController.swift; sourceTree = "<group>"; };
 		E40A69F91C1A7A940041EEC4 /* IndividualAssignmentInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualAssignmentInfoViewController.swift; sourceTree = "<group>"; };
 		E40A69FB1C1A7C220041EEC4 /* CameraRollOrCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRollOrCameraViewController.swift; sourceTree = "<group>"; };
+		E40A69FD1C1B92AB0041EEC4 /* SelectStudentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectStudentsViewController.swift; sourceTree = "<group>"; };
+		E40A69FF1C1BA3370041EEC4 /* ViewStudentWorkForAssignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStudentWorkForAssignmentViewController.swift; sourceTree = "<group>"; };
+		E40A6A011C1BA4B30041EEC4 /* EditAssignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAssignmentViewController.swift; sourceTree = "<group>"; };
+		E40E16BC1C1F56B600B0399D /* AssignmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentTableViewCell.swift; sourceTree = "<group>"; };
+		E40E16BE1C1F5DB500B0399D /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
+		E40E16C01C1F5DC000B0399D /* Classroom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classroom.swift; sourceTree = "<group>"; };
+		E40E16C21C1F5DC900B0399D /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		E444D0431C06D8690052D6EA /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		E45659861C1A414B008551E3 /* CreateStudentsForClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateStudentsForClassViewController.swift; sourceTree = "<group>"; };
 		E45659881C1A542A008551E3 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		E45B46AB1C220CBA00F6FE64 /* StandardsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardsManager.swift; sourceTree = "<group>"; };
+		E45B46AE1C2361B400F6FE64 /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		E46363F71C155F0F00D85472 /* assignment_by_class.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = assignment_by_class.png; sourceTree = "<group>"; };
 		E46363F81C155F0F00D85472 /* assignment_by_student.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = assignment_by_student.png; sourceTree = "<group>"; };
-		E46363FC1C1655D500D85472 /* CC-literacy-0.8.0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "CC-literacy-0.8.0.json"; sourceTree = "<group>"; };
-		E46363FD1C1655D500D85472 /* CC-math-0.8.0.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "CC-math-0.8.0.json"; sourceTree = "<group>"; };
 		E46364001C165A6500D85472 /* Standard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Standard.swift; sourceTree = "<group>"; };
 		E46364021C17875F00D85472 /* SelectStandardForAssignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectStandardForAssignmentViewController.swift; sourceTree = "<group>"; };
 		E46364041C178B7C00D85472 /* SelectAssigneesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectAssigneesViewController.swift; sourceTree = "<group>"; };
@@ -108,11 +122,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E40E16B91C1F565200B0399D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E40E16BC1C1F56B600B0399D /* AssignmentTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E45B46AD1C2361A400F6FE64 /* Helper Files */ = {
+			isa = PBXGroup;
+			children = (
+				E45B46AE1C2361B400F6FE64 /* Server.swift */,
+			);
+			name = "Helper Files";
+			sourceTree = "<group>";
+		};
 		E46363FB1C1655C200D85472 /* JSON Files */ = {
 			isa = PBXGroup;
 			children = (
-				E46363FC1C1655D500D85472 /* CC-literacy-0.8.0.json */,
-				E46363FD1C1655D500D85472 /* CC-math-0.8.0.json */,
 			);
 			name = "JSON Files";
 			sourceTree = "<group>";
@@ -129,6 +157,9 @@
 				E40A69F71C1A6FDD0041EEC4 /* TakePictureOfNewAssignmentViewController.swift */,
 				E40A69F91C1A7A940041EEC4 /* IndividualAssignmentInfoViewController.swift */,
 				E40A69FB1C1A7C220041EEC4 /* CameraRollOrCameraViewController.swift */,
+				E40A69FD1C1B92AB0041EEC4 /* SelectStudentsViewController.swift */,
+				E40A69FF1C1BA3370041EEC4 /* ViewStudentWorkForAssignmentViewController.swift */,
+				E40A6A011C1BA4B30041EEC4 /* EditAssignmentViewController.swift */,
 			);
 			name = Assignments;
 			sourceTree = "<group>";
@@ -194,9 +225,11 @@
 		E4ECCE631C03BA38002D089C /* PortfolioTracker */ = {
 			isa = PBXGroup;
 			children = (
+				E45B46AD1C2361A400F6FE64 /* Helper Files */,
 				E46363FB1C1655C200D85472 /* JSON Files */,
 				E4A03F6B1C0BB78C009F3DCE /* Images */,
 				E4ECCE7A1C03BA5D002D089C /* Models */,
+				E40E16B91C1F565200B0399D /* Views */,
 				E4ECCE791C03BA55002D089C /* View Controllers */,
 				E4ECCE641C03BA38002D089C /* AppDelegate.swift */,
 				E4ECCE681C03BA38002D089C /* Main.storyboard */,
@@ -206,6 +239,7 @@
 				E4ECCE6B1C03BA38002D089C /* PortfolioTracker.xcdatamodeld */,
 				E444D0431C06D8690052D6EA /* Header.h */,
 				E45659881C1A542A008551E3 /* UIViewExtensions.swift */,
+				E45B46AB1C220CBA00F6FE64 /* StandardsManager.swift */,
 			);
 			path = PortfolioTracker;
 			sourceTree = "<group>";
@@ -225,6 +259,9 @@
 			isa = PBXGroup;
 			children = (
 				E46364001C165A6500D85472 /* Standard.swift */,
+				E40E16BE1C1F5DB500B0399D /* Assignment.swift */,
+				E40E16C01C1F5DC000B0399D /* Classroom.swift */,
+				E40E16C21C1F5DC900B0399D /* Student.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -291,11 +328,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E46363FE1C1655D500D85472 /* CC-literacy-0.8.0.json in Resources */,
 				E4DBA81C1C115C83002E9BB8 /* greenCheck.png in Resources */,
 				E4ECCE721C03BA38002D089C /* LaunchScreen.storyboard in Resources */,
 				E46363F91C155F0F00D85472 /* assignment_by_class.png in Resources */,
-				E46363FF1C1655D500D85472 /* CC-math-0.8.0.json in Resources */,
 				E46363FA1C155F0F00D85472 /* assignment_by_student.png in Resources */,
 				E4DBA81A1C110E1D002E9BB8 /* redX.png in Resources */,
 				E4ECCE6F1C03BA38002D089C /* Assets.xcassets in Resources */,
@@ -363,21 +398,30 @@
 				E4A03F711C0CABB7009F3DCE /* CreateNewAssignmentViewController.swift in Sources */,
 				E40A69FA1C1A7A940041EEC4 /* IndividualAssignmentInfoViewController.swift in Sources */,
 				E4A03F6F1C0CAB50009F3DCE /* CreateNewClassViewController.swift in Sources */,
+				E40E16BD1C1F56B600B0399D /* AssignmentTableViewCell.swift in Sources */,
 				E46364071C178B9E00D85472 /* StudentOrClassViewController.swift in Sources */,
 				E40A69F81C1A6FDD0041EEC4 /* TakePictureOfNewAssignmentViewController.swift in Sources */,
 				E4ECCE6D1C03BA38002D089C /* PortfolioTracker.xcdatamodeld in Sources */,
+				E40A6A001C1BA3370041EEC4 /* ViewStudentWorkForAssignmentViewController.swift in Sources */,
+				E40A6A021C1BA4B30041EEC4 /* EditAssignmentViewController.swift in Sources */,
 				E4A03F751C0CADE3009F3DCE /* AssignmentsListViewController.swift in Sources */,
+				E45B46AF1C2361B400F6FE64 /* Server.swift in Sources */,
 				E40A69F61C1A6F5B0041EEC4 /* GetAssignmentFromCameraRollViewController.swift in Sources */,
 				E45659891C1A542A008551E3 /* UIViewExtensions.swift in Sources */,
+				E40E16C31C1F5DC900B0399D /* Student.swift in Sources */,
 				E46364051C178B7C00D85472 /* SelectAssigneesViewController.swift in Sources */,
 				E4ECCE651C03BA38002D089C /* AppDelegate.swift in Sources */,
 				E45659871C1A414B008551E3 /* CreateStudentsForClassViewController.swift in Sources */,
 				E4E0D4CB1C0517B7000BCC1D /* ForgotPasswordViewController.swift in Sources */,
 				E46364031C17875F00D85472 /* SelectStandardForAssignmentViewController.swift in Sources */,
 				E48893AB1C03FE200054992F /* LoginScreenViewController.swift in Sources */,
+				E45B46AC1C220CBA00F6FE64 /* StandardsManager.swift in Sources */,
 				E4E0D4C71C04144E000BCC1D /* ClassesViewController.swift in Sources */,
 				E46364011C165A6500D85472 /* Standard.swift in Sources */,
+				E40E16C11C1F5DC000B0399D /* Classroom.swift in Sources */,
 				E4A03F731C0CAD27009F3DCE /* PortfolioDashboardViewController.swift in Sources */,
+				E40A69FE1C1B92AB0041EEC4 /* SelectStudentsViewController.swift in Sources */,
+				E40E16BF1C1F5DB500B0399D /* Assignment.swift in Sources */,
 				E4E0D4C91C0517A2000BCC1D /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
