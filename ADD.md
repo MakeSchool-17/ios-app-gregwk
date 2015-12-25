@@ -31,11 +31,12 @@ From the dashboard, if a user clicks on a a class cell, they will open a view sh
 ####External Services
 
 Box SDK
-CommonStandards API (http://beta.commonstandardsproject.com/developers)
+CommonStandards API: (http://beta.commonstandardsproject.com/developers)
 Gloss
 AlamoFire
 Realm
 Parse
+Calendar Date Picker:  https://github.com/hons82/THCalendarDatePicker
 
 Research-- do I need to use the API, or can I just pull the data base from other open source apps?
 
@@ -111,6 +112,7 @@ Assignment
     Begin implementing Table Views on all necessary pages
     Create full data models in swift
     Replace dummy implementations on creation pages with ones that create actual objects, save to Parse/Realm
+    Implement single sign-in--once user has created a profile and signed in, use Parse's currentuser setting to skip sign in screen from then on.
     Server Synchronization.  NBD.
     
     
@@ -148,6 +150,8 @@ JSON files of Common Core State Standards borrowed from Common Standards Github 
 Fade in/Fade Out extensions learned from tutorial by Andrew Bancroft(https://www.andrewcbancroft.com/2014/07/27/fade-in-out-animations-as-class-extensions-with-swift/)
 
 Really sweet delay function by "@matt" found on SO (http://stackoverflow.com/questions/24034544/dispatch-after-gcd-in-swift/24318861#24318861)
+
+Calendar Date Picker for selecting assignment date during assignment creation/editing -- https://github.com/hons82/THCalendarDatePicker
 
 
 
