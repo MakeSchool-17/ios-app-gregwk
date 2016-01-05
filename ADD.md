@@ -105,12 +105,15 @@ Assignment
     Added working back buttons to ALL nav bars
     Finished General UI Layout/Workflow for all tabs except Portfolio View.
     Added validation checks to textfields on CreateStudentsForClass VC.  They even fade out!
+    Basic classrooms can now be created on the classrooms track
+    students can be added to class roster during class creation
+    Table view added to show students enrolled in newly created class
+    App now successfully grabs standards for given jurisdiction from CommonStandards API
+
 
 --Next Milestones--
 
     Begin Parsing JSON files from Common Standards Project.
-    Begin implementing Table Views on all necessary pages
-    Create full data models in swift
     Replace dummy implementations on creation pages with ones that create actual objects, save to Parse/Realm
     Implement single sign-in--once user has created a profile and signed in, use Parse's currentuser setting to skip sign in screen from then on.
     Server Synchronization.  NBD.
