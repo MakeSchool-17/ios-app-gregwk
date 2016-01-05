@@ -1,8 +1,8 @@
 EMBEDDED_CONTENT_CONTAINS_SWIFT = YES
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/Alamofire.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Bolts.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Gloss.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Parse.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Realm.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/RealmSwift.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/box_ios_sdk_v2.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -ObjC -framework "Alamofire" -framework "Bolts" -framework "Gloss" -framework "Parse" -framework "Realm" -framework "RealmSwift" -framework "box_ios_sdk_v2"
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/Alamofire.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Bolts.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Gloss.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/KNSemiModalViewController_hons82.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Parse.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Realm.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/RealmSwift.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/THCalendarDatePicker.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/box_ios_sdk_v2.framework/Headers"
+OTHER_LDFLAGS = $(inherited) -ObjC -framework "Alamofire" -framework "Bolts" -framework "Gloss" -framework "KNSemiModalViewController_hons82" -framework "Parse" -framework "Realm" -framework "RealmSwift" -framework "THCalendarDatePicker" -framework "box_ios_sdk_v2"
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-PortfolioTracker
 PODS_ROOT = ${SRCROOT}/Pods

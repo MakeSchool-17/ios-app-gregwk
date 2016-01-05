@@ -14,16 +14,50 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var commonCoreID: String!
+    var allStandardsForJurisdiction: Dictionary<String, AnyObject>!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
         Parse.setApplicationId("x8nq38BcoFI2xhA8b8PGsbJfuaHY25FEwHBOkdEr", clientKey: "Ve9KJvCjYPt9SPBNBmrR65sk5aNh34OK74WgiaWH")
+        
         let server = Server()
-        server.getJurisdictionIDsAsJSON()
+        
+        server.getJurisdictionIDForState("Common Core State Standards" ) { (idForJurisdiction: String, returnStatus: ReturnStatus) in
+            // we're inside the closure here!
+            switch returnStatus {
+            case .Successful:
+                self.commonCoreID = idForJurisdiction
+                print("\(self.commonCoreID)")
+                
+            case .Error:
+                print("error getting ID")
+            }
+           
+            
+            server.getStandardsForJurisdiction(self.commonCoreID) { (standardsForJurisdiction: Dictionary<String, AnyObject>, returnStatus: ReturnStatus) in
+                
+                switch returnStatus {
+                case .Successful:
+                    self.allStandardsForJurisdiction = standardsForJurisdiction
+                    print("\(self.allStandardsForJurisdiction)")
+                    
+                case .Error:
+                    print("Error getting standards")
+                }
+                
+            }
+            
+        }
+    
+        
+        
+        
+        
         return true
-    }
+            }
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

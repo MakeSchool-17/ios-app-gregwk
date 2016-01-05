@@ -87,17 +87,21 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-PortfolioTracker/Alamofire.framework"
   install_framework "Pods-PortfolioTracker/Bolts.framework"
   install_framework "Pods-PortfolioTracker/Gloss.framework"
+  install_framework "Pods-PortfolioTracker/KNSemiModalViewController_hons82.framework"
   install_framework "Pods-PortfolioTracker/Parse.framework"
   install_framework "Pods-PortfolioTracker/Realm.framework"
   install_framework "Pods-PortfolioTracker/RealmSwift.framework"
+  install_framework "Pods-PortfolioTracker/THCalendarDatePicker.framework"
   install_framework "Pods-PortfolioTracker/box_ios_sdk_v2.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-PortfolioTracker/Alamofire.framework"
   install_framework "Pods-PortfolioTracker/Bolts.framework"
   install_framework "Pods-PortfolioTracker/Gloss.framework"
+  install_framework "Pods-PortfolioTracker/KNSemiModalViewController_hons82.framework"
   install_framework "Pods-PortfolioTracker/Parse.framework"
   install_framework "Pods-PortfolioTracker/Realm.framework"
   install_framework "Pods-PortfolioTracker/RealmSwift.framework"
+  install_framework "Pods-PortfolioTracker/THCalendarDatePicker.framework"
   install_framework "Pods-PortfolioTracker/box_ios_sdk_v2.framework"
 fi

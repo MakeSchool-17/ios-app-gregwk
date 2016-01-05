@@ -8,10 +8,27 @@
 
 import UIKit
 
-class IndividualAssignmentInfoViewController: UIViewController {
+class IndividualAssignmentInfoViewController: UIViewController  {
 
+    
+    
     @IBAction func backButtonPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
 
+    @IBAction func editAssignmentButtonPressed(sender: AnyObject) {
+    }
+}
+
+
+extension IndividualAssignmentInfoViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("assignmentCell")! as UITableViewCell
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
 }

@@ -9,6 +9,7 @@ target 'PortfolioTracker' do
 	pod 'Gloss', '~> 0.6.1'
 	pod 'RealmSwift'
 	pod 'Parse'
+	pod 'THCalendarDatePicker', '~> 1.2.5'
 	
 end
 

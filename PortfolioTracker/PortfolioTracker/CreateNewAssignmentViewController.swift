@@ -6,6 +6,10 @@
 //  Copyright © 2015 Mike Kane. All rights reserved.
 //
 
+//get user input for name
+//get user input for grade and subject level
+//pass to next view controller
+
 import UIKit
 
 
@@ -30,6 +34,11 @@ class CreateNewAssignmentViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func continueButtonPressed(sender: AnyObject) {
+        
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         subjectPickerView.dataSource = self

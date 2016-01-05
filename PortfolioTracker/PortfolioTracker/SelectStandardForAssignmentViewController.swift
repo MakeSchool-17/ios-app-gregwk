@@ -9,6 +9,11 @@
 import UIKit
 
 class SelectStandardForAssignmentViewController: UIViewController {
+    
+    //var applicableStandards: Array<Standard> = []
+    
+    @IBOutlet weak var standardSelectionTableView: UITableView!
+    
 
     @IBAction func backButtonPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)

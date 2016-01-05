@@ -9,7 +9,11 @@
 import UIKit
 
 class CreateStudentsForClassViewController: UIViewController {
+    
+    var newlyCreatedClass: Classroom!
 
+    @IBOutlet weak var studentRosterTableView: UITableView!
+    
     @IBOutlet weak var firstNameTextField: UITextField!
  
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -28,6 +32,15 @@ class CreateStudentsForClassViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let nib = UINib(nibName: "StudentEnrolledCell", bundle: nil)
+        studentRosterTableView.registerNib(nib, forCellReuseIdentifier: "StudentEnrolledCell")
+        studentRosterTableView.delegate = self
+        studentRosterTableView.dataSource = self
+    }
+    
     @IBAction func saveStudentButtonPressed(sender: AnyObject) {
         let studentFirstName = firstNameTextField.text
         let studentLastName = lastNameTextField.text
@@ -35,14 +48,22 @@ class CreateStudentsForClassViewController: UIViewController {
         
         if studentFirstName != "" && studentLastName != "" && studentNumber != "" {
             //save student profile to Realm and Parse
+            let newStudent = Student()
+            newStudent.firstName = studentFirstName
+            newStudent.lastName = studentLastName
+            newStudent.studentNumber = studentNumber
+            newlyCreatedClass.enrollStudent(newStudent)
             outcomeLabel.textColor = UIColor.greenColor()
             outcomeLabel.text = "\(studentFirstName!) \(studentLastName!) added to class!"
+            studentRosterTableView.reloadData()
+            firstNameTextField.text = ""
+            lastNameTextField.text = ""
+            studentNumberTextField.text = ""
+            
             
         } else {
             outcomeLabel.textColor = UIColor.redColor()
             outcomeLabel.text = "Error: All Fields Required"
-            
-    
         }
         
         displayImages()
@@ -68,7 +89,7 @@ class CreateStudentsForClassViewController: UIViewController {
     
 }
 
-extension CreateStudentsForClassViewController {
+extension CreateStudentsForClassViewController: UITableViewDataSource, UITableViewDelegate {
     
     func delay(delay:Double, closure:()->()) {
         dispatch_after(
@@ -106,8 +127,25 @@ extension CreateStudentsForClassViewController {
         lastNameValidImage.fadeOut()
         studentNumberValidImage.fadeOut()
         
-    }
         
+    }
+
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("StudentEnrolledCell", forIndexPath: indexPath) as! StudentEnrolledTableViewCell
+        let studentFirstName = newlyCreatedClass?.classRoster[indexPath.row].firstName
+        let studentLastName = newlyCreatedClass?.classRoster[indexPath.row].lastName
+        let studentNumber = newlyCreatedClass?.classRoster[indexPath.row].studentNumber
+        cell.studentNameLabel.text = "\(studentLastName!), \(studentFirstName!)"
+        cell.studentNumberLabel.text = "\(studentNumber!)"
+        
+        return cell
+        
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (newlyCreatedClass?.classRoster.count)!
+    }
+    
+    
 }
-
-

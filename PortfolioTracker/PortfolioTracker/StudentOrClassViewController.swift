@@ -12,6 +12,19 @@ class StudentOrClassViewController: UIViewController {
     
     var studentOrClass: String?
     
+    
+    @IBOutlet weak var assignmentNameLabel: UILabel!
+    
+    @IBOutlet weak var dateAssignedLabel: UILabel!
+    
+    @IBOutlet weak var subjectLabel: UILabel!
+    
+    @IBOutlet weak var gradeLevelLabel: UILabel!
+    
+    @IBOutlet weak var standardSelectedLabel: UILabel!
+    
+    
+    
     @IBAction func backButtonPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
