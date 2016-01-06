@@ -11,6 +11,10 @@ import UIKit
 class ClassesViewController: UIViewController {
     
     var allClasses: Array<Classroom> = []
+    
+    @IBAction func unwindToClassesVC(sender: UIStoryboardSegue) {
+        
+    }
 
     @IBOutlet weak var listOfClassesTableView: UITableView!
     
@@ -18,7 +22,7 @@ class ClassesViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let nib = UINib(nibName: "CurrentClassTableViewCell", bundle: nil)
+        let nib = UINib(nibName: "CurrentClassesTableView", bundle: nil)
         listOfClassesTableView.registerNib(nib, forCellReuseIdentifier: "CurrentClassesCell")
         
         listOfClassesTableView.dataSource = self
@@ -26,6 +30,12 @@ class ClassesViewController: UIViewController {
         
     }
 
+    override func viewWillAppear(animated: Bool) {
+        let nib = UINib(nibName: "CurrentClassesTableView", bundle: nil)
+        listOfClassesTableView.registerNib(nib, forCellReuseIdentifier: "CurrentClassesCell")
+        listOfClassesTableView.reloadData()
+    }
+    
 }
 
 
@@ -40,7 +50,7 @@ extension ClassesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CurrentClassesCell") as! CurrentClassesTableViewCell
         cell.classNameLabel.text = allClasses[indexPath.row].className
-        cell.studentsEnrolledLabel.text = "\(allClasses[indexPath.row].classRoster.count)"
+        cell.studentsEnrolledLabel.text = "Students Enrolled: \(allClasses[indexPath.row].classRoster.count)"
         
         return cell
     }

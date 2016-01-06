@@ -469,21 +469,21 @@
                                     <navigationItem title="Current Classes" id="8mO-oN-gr0">
                                         <barButtonItem key="rightBarButtonItem" title="Add New Class" id="lla-Q9-CcO">
                                             <connections>
-                                                <segue destination="7Xm-6k-DBW" kind="presentation" id="vYP-6q-1uN"/>
+                                                <segue destination="7Xm-6k-DBW" kind="show" identifier="CreateNewClassSegue" id="vYP-6q-1uN"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PVx-bm-kH5">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PVx-bm-kH5">
                                 <rect key="frame" x="0.0" y="130" width="1024" height="589"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrentClassesCell" rowHeight="69" id="why-OV-KnB" customClass="CurrentClassesTableViewCell" customModule="PortfolioTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="1024" height="69"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrentClassesCell" rowHeight="86" id="why-OV-KnB" customClass="CurrentClassesTableViewCell" customModule="PortfolioTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="1024" height="86"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="why-OV-KnB" id="VSa-3F-Kyd">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="69"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="86"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1433,7 +1433,11 @@
                                                 <action selector="backButtonPressed:" destination="6la-CP-dyG" id="v5T-Lo-ocM"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Create Class!" id="WqY-HI-kjA"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Create Class!" id="WqY-HI-kjA">
+                                            <connections>
+                                                <action selector="createClassButtonPressed:" destination="6la-CP-dyG" id="vtQ-l5-IUN"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -1604,9 +1608,11 @@
                         <outlet property="studentNumberTextField" destination="veZ-KZ-hVz" id="Ep7-ep-snv"/>
                         <outlet property="studentNumberValidImage" destination="A32-2a-b3v" id="h4W-Eu-ca3"/>
                         <outlet property="studentRosterTableView" destination="Dgi-Hw-haI" id="tfK-9H-IF0"/>
+                        <segue destination="2Ih-da-crs" kind="unwind" identifier="UnwindToClassDashboardSegue" unwindAction="unwindToClassesVC:" id="NfK-pF-Knm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u2k-Np-fI8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2Ih-da-crs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5220" y="-156"/>
         </scene>

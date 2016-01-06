@@ -32,6 +32,14 @@ class CreateStudentsForClassViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func createClassButtonPressed(sender: AnyObject) {
+        if self.newlyCreatedClass.classRoster.count > 0 {
+            self.performSegueWithIdentifier("UnwindToClassDashboardSegue", sender: nil)
+        } else {
+            self.outcomeLabel.text = "You haven't enrolled any students yet!"
+        }
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,7 +92,12 @@ class CreateStudentsForClassViewController: UIViewController {
     }
 
     
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "UnwindToClassDashboardSegue" {
+            let classDashboardVC = segue.destinationViewController as! ClassesViewController
+            classDashboardVC.allClasses.append(newlyCreatedClass)
+        }
+    }
     
     
 }
