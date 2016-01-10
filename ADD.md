@@ -132,10 +132,10 @@ Assignment
     -- debug input validation for enrolling students during classroom creation
     -- Move standards API call from app delegate to assignment creation track
     -- Figure out full stucture of document from CommonStandards API
-    -- Add screen that asks teacher to select jurisdiction for standards during sign up process
+    -- ~~Add screen that asks teacher to select jurisdiction for standards during sign up process~~ 
     -- Populate standards selection table view with appropriate standards according to user selection of grade/subject
     -- Implement single sign-in features from Parse
-    -- Implement Realm persistence of standards array
+    -- Implement Parse persistence of standards array
     -- Implement camera view for assignment creation track
     -- implement camera roll selection for assignment creation track
     -- Create dummy portfolio items to demo track
@@ -145,8 +145,9 @@ Assignment
     -- Implement a student detail view for classroom
     -- Add screen that allows teachers to edit classrooms that are already created
     -- Add Screen that allows teachers to edit students that are already created
-    -- Add functionality that allows teachers to select students for assignments
+    -- ~~Add functionality that allows teachers to select students for assignments~~
     -- Add functionality that allows teachers to select entire classes for assignments
+    -- ~~Add Screen that allows user to change settings~~
     
 
 
