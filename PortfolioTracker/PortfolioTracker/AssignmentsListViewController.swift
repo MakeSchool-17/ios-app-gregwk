@@ -15,7 +15,7 @@ class AssignmentsListViewController: UIViewController {
 
 
     @IBOutlet weak var assignmentTableView: UITableView!
-    
+    var assignmentToView: Assignment!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +35,20 @@ class AssignmentsListViewController: UIViewController {
         
         assignment1.dateAssigned = "11/3/15"
         
+        let standard1 = Standard()
+        standard1.shortCode = "MA 3.4.2A"
+        standard1.descriptionOfStandard = "Test Description"
+        
+        let standard2 = Standard()
+        standard2.shortCode = "MA 3.4.2B"
+        standard2.descriptionOfStandard = "Second Test Description"
+        let standard3 = Standard()
+        standard3.shortCode = "CD 1.2.1"
+        standard3.descriptionOfStandard = "Third Test Description"
+        
+        assignment1.standard = standard1
+        assignment2.standard = standard2
+        assignment3.standard = standard3
         
         assignment1.submitted = true
         assignment2.submitted = true
@@ -54,7 +68,13 @@ class AssignmentsListViewController: UIViewController {
     }
     
     
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ViewAssignmentDetailsSegue" {
+            let nextVC = segue.destinationViewController as! IndividualAssignmentInfoViewController
+            nextVC.assignmentSelected = assignmentToView
+            
+        }
+    }
     
     
 }
@@ -69,6 +89,8 @@ extension AssignmentsListViewController: UITableViewDelegate, UITableViewDataSou
         let cell = tableView.dequeueReusableCellWithIdentifier("AssignmentCell", forIndexPath: indexPath) as! AssignmentTableViewCell
         cell.setCellDetails(allAssignmentsCreated[indexPath.row])
         
+        
+        
         return cell
     
     }
@@ -77,6 +99,10 @@ extension AssignmentsListViewController: UITableViewDelegate, UITableViewDataSou
         return allAssignmentsCreated.count
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        assignmentToView = allAssignmentsCreated[indexPath.row]
+        performSegueWithIdentifier("ViewAssignmentDetailsSegue", sender: nil)
+    }
     
 
 }

@@ -27,6 +27,8 @@ class Server {
     ]
     
     
+    
+    
     func getJurisdictionIDForState(state: String, returnClosure: (idForJurisdiction: String, returnStatus:ReturnStatus) -> Void) -> Void {
         
         Alamofire.request(.GET, apiLocation + "jurisdictions", headers: headers, encoding: .JSON).responseJSON {
@@ -38,6 +40,9 @@ class Server {
                             let arrayOfJurisdictions = jsonDictionary["data"] as! Array<Dictionary<String, String>>
                             
                             for dict in arrayOfJurisdictions {
+                                if dict["type"] == "state" {
+                                    print("\(dict)")
+                                }
                                 if state == dict["title"] {
                                     
                                     if let newlyGrabbedJurisdictionID = dict["id"] {

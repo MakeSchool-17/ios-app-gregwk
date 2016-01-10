@@ -35,6 +35,7 @@ class CreateStudentsForClassViewController: UIViewController {
     @IBAction func createClassButtonPressed(sender: AnyObject) {
         if self.newlyCreatedClass.classRoster.count > 0 {
             self.performSegueWithIdentifier("UnwindToClassDashboardSegue", sender: nil)
+            RosterOfAllStudents.totalRoster.saveToParse()
         } else {
             self.outcomeLabel.text = "You haven't enrolled any students yet!"
         }
@@ -53,13 +54,13 @@ class CreateStudentsForClassViewController: UIViewController {
         let studentFirstName = firstNameTextField.text
         let studentLastName = lastNameTextField.text
         let studentNumber = studentNumberTextField.text
-        
         if studentFirstName != "" && studentLastName != "" && studentNumber != "" {
-            //save student profile to Realm and Parse
             let newStudent = Student()
+            
             newStudent.firstName = studentFirstName
             newStudent.lastName = studentLastName
             newStudent.studentNumber = studentNumber
+            RosterOfAllStudents.totalRoster.enrollStudent(newStudent)
             newlyCreatedClass.enrollStudent(newStudent)
             outcomeLabel.textColor = UIColor.greenColor()
             outcomeLabel.text = "\(studentFirstName!) \(studentLastName!) added to class!"

@@ -44,10 +44,16 @@
                         <rect key="frame" x="305" y="9" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="6vT-zu-Xh7"/>
+                            <constraint firstAttribute="height" constant="40" id="8ML-e3-8Pj"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="Zif-OI-9C5"/>
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redX.png" translatesAutoresizingMaskIntoConstraints="NO" id="FII-ol-nQU">
                         <rect key="frame" x="305" y="60" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="77c-hH-QK9"/>
+                            <constraint firstAttribute="width" constant="40" id="jmN-bi-hyF"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Assigned:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJO-rv-Miz">
                         <rect key="frame" x="8" y="47" width="116" height="21"/>

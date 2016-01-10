@@ -12,6 +12,8 @@ class ClassesViewController: UIViewController {
     
     var allClasses: Array<Classroom> = []
     
+    var cellSelectedIndex: Int!
+    
     @IBAction func unwindToClassesVC(sender: UIStoryboardSegue) {
         
     }
@@ -57,6 +59,18 @@ extension ClassesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allClasses.count
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.cellSelectedIndex = indexPath.row
+        performSegueWithIdentifier("ViewStudentsInClassSegue", sender: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ViewStudentsInClassSegue" {
+            let nextVC = segue.destinationViewController as! ViewStudentsInClassViewController
+            nextVC.classSelected = allClasses[cellSelectedIndex]
+        }
     }
     
 }

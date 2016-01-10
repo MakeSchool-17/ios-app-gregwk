@@ -14,8 +14,8 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var commonCoreID: String!
-    var allStandardsForJurisdiction: Dictionary<String, AnyObject>!
+    var commonCoreID: String = ""
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -36,18 +36,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
            
             
-            server.getStandardsForJurisdiction(self.commonCoreID) { (standardsForJurisdiction: Dictionary<String, AnyObject>, returnStatus: ReturnStatus) in
-                
-                switch returnStatus {
-                case .Successful:
-                    self.allStandardsForJurisdiction = standardsForJurisdiction
-                    print("\(self.allStandardsForJurisdiction)")
-                    
-                case .Error:
-                    print("Error getting standards")
-                }
-                
-            }
+//            server.getStandardsForJurisdiction(self.commonCoreID) { (standardsForJurisdiction: Dictionary<String, AnyObject>, returnStatus: ReturnStatus) in
+//                
+//                switch returnStatus {
+//                case .Successful:
+//                    self.allStandardsForJurisdiction = standardsForJurisdiction
+//                    print("\(self.allStandardsForJurisdiction)")
+//                    
+//                case .Error:
+//                    print("Error getting standards")
+//                }
+//                
+//            }
             
         }
     

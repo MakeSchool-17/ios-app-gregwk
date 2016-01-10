@@ -24,6 +24,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var firstNameInputImage: UIImageView!
     @IBOutlet weak var lastNameInputImage: UIImageView!
     @IBOutlet weak var schoolNameInputImage: UIImageView!
+    @IBOutlet weak var standardsPickerView: UIPickerView!
+    
     
     
     var emailInputValid: Bool = false
@@ -32,7 +34,10 @@ class SignUpViewController: UIViewController {
     var firstNameInputValid: Bool = false
     var lastNameInputValid: Bool = false
     var schoolNameInputValid: Bool = false
+    var didSelectJurisdiction: Bool = false
+    var jurisdictionSelected: String = ""
     
+    let standardsPickerViewData = ["Please Select A Standards Set", "Common Core State Standards", "Oklahoma Academic Standards", "Texas Essential Knowledge and Skills", "Virginia State Standards of Learning", "Alaska State Standards", "Nebraska State Standards", "Indiana Academic Standards", "South Carolina CCR Standards"]
     
     
     
@@ -44,6 +49,8 @@ class SignUpViewController: UIViewController {
         firstNameTextField?.delegate = self
         lastNameTextField?.delegate = self
         schoolNameTextField?.delegate = self
+        standardsPickerView.dataSource = self
+        standardsPickerView.delegate = self
     }
   
     
@@ -57,9 +64,9 @@ class SignUpViewController: UIViewController {
     
     
     @IBAction func submitButtonPressed(sender: AnyObject) {
-        if (emailInputValid && passwordInputValid && passwordConfirmed && firstNameInputValid && lastNameInputValid && schoolNameInputValid) {
-            signUp(userEmailTextField.text!, password: passwordTextField.text!)
-            saveUserDetails(firstNameTextField.text!, lastName: lastNameTextField.text!, schoolName: schoolNameTextField.text!)
+        if (emailInputValid && passwordInputValid && passwordConfirmed && firstNameInputValid && lastNameInputValid && schoolNameInputValid && didSelectJurisdiction) {
+            signUp(userEmailTextField.text!, password: passwordTextField.text!, firstName: firstNameTextField.text!, lastName: lastNameTextField.text!, schoolName: schoolNameTextField.text!, jurisdiction: jurisdictionSelected)
+            
             dismissViewControllerAnimated(true, completion: nil)
         } else {
             resultsLabel.text = "All fields are required."
@@ -76,8 +83,36 @@ class SignUpViewController: UIViewController {
 
 
 
-extension SignUpViewController: UITextFieldDelegate {
+extension SignUpViewController: UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    
+    //MARK: Picker View Data Source
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return standardsPickerViewData.count
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return standardsPickerViewData[row]
+    }
+    
+    
+    //MARK: Picker View Delegate
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if row != 0 {
+            self.jurisdictionSelected = standardsPickerViewData[row]
+            self.didSelectJurisdiction = true
+        } else {
+            self.didSelectJurisdiction = false
+        }
+    }
+    
+    
+    
+    //MARK: Input Validation
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         if (textField == userEmailTextField) {
             
@@ -143,45 +178,89 @@ extension SignUpViewController: UITextFieldDelegate {
         
     }
     
-    
-    func signUp(userName: String, password: String) {
-        
+    //MARK: Sign up through Parse
+    func signUp(userName: String, password: String, firstName: String, lastName: String, schoolName: String, jurisdiction: String) {
+        let server = Server()
         let user = PFUser()
         user.username = userName
         user.password = password
         user.email = userName
-        
-        
-        user.signUpInBackgroundWithBlock{
-            (succeeded: Bool, error: NSError?) -> Void in
-                if let error = error {
-                let errorString = error.userInfo[error] as? NSString
-                print(errorString)
-                }
-        }
-    }
-    
-    
-    
-    func saveUserDetails(firstName: String, lastName: String, schoolName: String) {
-        
-        let user = PFObject(className: "User")
         user["firstName"] = firstName
         user["lastName"] = lastName
         user["schoolName"] = schoolName
+        user["standardsJurisdiction"] = jurisdiction
+        var selectedState: String = ""
+        var selectedStateID: String = ""
+        var allStandardsForState: Dictionary<String, AnyObject>!
         
-        user.saveInBackgroundWithBlock {
-            (success: Bool, error: NSError?) -> Void in
-            if (success) {
-                print("attributes saved successfully")
-            } else {
-                print("\(error?.description)")
+        
+        switch jurisdiction {
+            case "Common Core State Standards":
+                selectedState = "Common Core State Standards"
+            case "Oklahoma Academic Standards":
+                selectedState = "Oklahoma"
+            case "Texas Essential Knowledge and Skills":
+                selectedState = "Texas"
+            case "Virgina State Standards of Learning":
+                selectedState = "Virginia"
+            case "Alaska State Standards":
+                selectedState = "Alaska"
+            case "Nebraska State Standards":
+                selectedState = "Nebraska"
+            case "Indiana State Standards":
+                selectedState = "Indiana"
+            case "South Carolina CCR Standards":
+                selectedState = "South Carolina"
+            default:
+                selectedState = "Common Core State Standards"
+        }
+        
+        server.getJurisdictionIDForState(selectedState) { (idForJurisdiction: String, returnStatus: ReturnStatus) in
+            // we're inside the closure here!
+            switch returnStatus {
+            case .Successful:
+                selectedStateID = idForJurisdiction
+                //print("\(selectedStateID)")
+                user["standardsJurisdictionID"] = selectedStateID
+                
+            case .Error:
+                print("error getting ID")
+            }
+            
+            
+            server.getStandardsForJurisdiction(selectedStateID) { (standardsForJurisdiction: Dictionary<String, AnyObject>, returnStatus: ReturnStatus) -> Void in
+                switch returnStatus {
+                case .Successful:
+                    allStandardsForState = standardsForJurisdiction
+                    print("\(allStandardsForState)")
+                    print("\n")
+                    print("\n")
+                    user["allStandardsForJurisdiction"] = [allStandardsForState]
+                    
+                    user.signUpInBackgroundWithBlock {
+                        (succeeded: Bool, error: NSError?) -> Void in
+                        if let error = error {
+                            let errorString = error.userInfo[error] as? NSString
+                            print(errorString)
+                        }
+                    }
+                
+                    
+                    
+                case .Error:
+                    print("Error getting standards for \(selectedState)")
+                }
             }
             
         }
         
         
+        
+        
     }
+        
+        
+        
     
     
     func validateString(value: String?) -> Bool {
@@ -201,7 +280,8 @@ extension SignUpViewController: UITextFieldDelegate {
             return true
         }
     }
-
+    
+    //Mark: Update Image for input validation
     func updateValidInputImage(valid: Bool, image: UIImageView) {
         if (valid) {
             image.image = UIImage(named: "greenCheck.png")
@@ -210,6 +290,8 @@ extension SignUpViewController: UITextFieldDelegate {
         }
             image.hidden = false
     }
-}
 
+
+
+}
 
