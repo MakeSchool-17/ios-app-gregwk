@@ -30,17 +30,9 @@ From the dashboard, if a user clicks on a a class cell, they will open a view sh
 
 ####External Services
 
-Box SDK
 CommonStandards API: (http://beta.commonstandardsproject.com/developers)
-Gloss
 AlamoFire
-Realm
 Parse
-Calendar Date Picker:  https://github.com/hons82/THCalendarDatePicker
-
-Research-- do I need to use the API, or can I just pull the data base from other open source apps?
-
-
 
 ####Screens
 
@@ -113,10 +105,11 @@ Assignment
 
 --Next Milestones--
 
-    Begin Parsing JSON files from Common Standards Project.
+    Begin Parsing JSON from Common Standards API
     Save data to Parse
-    Implement single sign-in--once user has created a profile and signed in, use Parse's currentuser setting to skip sign in screen from then on.
-    Server Synchronization.  NBD.
+    Implement single sign-in--once user has created a profile and signed in, use Parse's currentUser setting to skip sign in screen from then on.
+    Fix scroll view issue on login screen
+
     
     --debugging--
         Scroll View doesnt adjust from open keyboard on LoginViewController 
@@ -128,7 +121,6 @@ Assignment
     -- debug input validation for enrolling students during classroom creation
     -- Move standards API call from app delegate to assignment creation track
     -- Figure out full stucture of document from CommonStandards API
-    -- ~~Add screen that asks teacher to select jurisdiction for standards during sign up process~~ 
     -- Populate standards selection table view with appropriate standards according to user selection of grade/subject
     -- Implement single sign-in features from Parse
     -- Implement Parse persistence of standards array
@@ -139,20 +131,10 @@ Assignment
     -- Get classroom cells to segue to detail view on tap
     -- Get assignment cells to segue to detail view on tap
     -- Implement a student detail view for classroom
-    -- ~~Add functionality that allows teachers to select students for assignments~~
     -- Add functionality that allows teachers to select entire classes for assignments
+    -- ~~Add functionality that allows teachers to select students for assignments~~
     -- ~~Add Screen that allows user to change settings~~
-    
-
-
-
-
-
-    Begin working on table views
-    design CreateNewAssignmentViewController
-    Learn how to use CommonStandards API to populate CreateNewAssignmentViewController with standards data (write down specific questions for instructors)
-    Finish data model (talk to instructors about this)
-
+    -- ~~Add screen that asks teacher to select jurisdiction for standards during sign up process~~ 
 
 ## Copyright notes
 
