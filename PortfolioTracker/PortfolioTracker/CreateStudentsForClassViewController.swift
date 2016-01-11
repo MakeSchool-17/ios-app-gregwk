@@ -35,7 +35,7 @@ class CreateStudentsForClassViewController: UIViewController {
     @IBAction func createClassButtonPressed(sender: AnyObject) {
         if self.newlyCreatedClass.classRoster.count > 0 {
             self.performSegueWithIdentifier("UnwindToClassDashboardSegue", sender: nil)
-            RosterOfAllStudents.totalRoster.saveToParse()
+            
         } else {
             self.outcomeLabel.text = "You haven't enrolled any students yet!"
         }
@@ -51,16 +51,18 @@ class CreateStudentsForClassViewController: UIViewController {
     }
     
     @IBAction func saveStudentButtonPressed(sender: AnyObject) {
+        
+        
         let studentFirstName = firstNameTextField.text
         let studentLastName = lastNameTextField.text
         let studentNumber = studentNumberTextField.text
+        
         if studentFirstName != "" && studentLastName != "" && studentNumber != "" {
-            let newStudent = Student()
             
+            let newStudent = Student()
             newStudent.firstName = studentFirstName
             newStudent.lastName = studentLastName
             newStudent.studentNumber = studentNumber
-            RosterOfAllStudents.totalRoster.enrollStudent(newStudent)
             newlyCreatedClass.enrollStudent(newStudent)
             outcomeLabel.textColor = UIColor.greenColor()
             outcomeLabel.text = "\(studentFirstName!) \(studentLastName!) added to class!"
@@ -69,8 +71,8 @@ class CreateStudentsForClassViewController: UIViewController {
             lastNameTextField.text = ""
             studentNumberTextField.text = ""
             
-            
         } else {
+            
             outcomeLabel.textColor = UIColor.redColor()
             outcomeLabel.text = "Error: All Fields Required"
         }
@@ -89,9 +91,9 @@ class CreateStudentsForClassViewController: UIViewController {
             self.studentNumberValidImage.hidden = true
             self.studentNumberValidImage.alpha = 1.0
         }
-        
     }
 
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "UnwindToClassDashboardSegue" {

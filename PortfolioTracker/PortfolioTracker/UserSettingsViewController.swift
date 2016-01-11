@@ -11,6 +11,7 @@ import Parse
 
 class UserSettingsViewController: UIViewController {
     
+    let user = PFUser.currentUser()
     
     
     
@@ -24,13 +25,42 @@ class UserSettingsViewController: UIViewController {
 
     @IBOutlet weak var schoolNameTextField: UITextField!
     
+    @IBOutlet weak var currentStandardSelected: UILabel!
+    
+    @IBOutlet weak var successLabel: UILabel!
+    
+    
+    
     var standardsSetChanged = false
-    var newStandardsJurisdiction: String?
+    var newStandardsJurisdiction: String!
+    
     
     @IBAction func changeStandardsButtonPressed(sender: AnyObject) {
         
         standardsPickerView.hidden = !standardsPickerView.hidden
         
+    }
+    
+    @IBAction func saveChangesButtonPressed(sender: AnyObject) {
+        
+        let firstName = firstNameTextField.text
+        let lastName = lastNameTextField.text
+        let emailAddress = emailAddressTextField.text
+        let schoolName = schoolNameTextField.text
+        let newJurisdiction = newStandardsJurisdiction
+        
+        saveToParse(firstName!, lastName: lastName!, schoolName: schoolName!, emailAddress: emailAddress!, standards: newJurisdiction!)
+        
+        successLabel.hidden = false
+        
+        delay(1.0) {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
+    }
+    
+    @IBAction func backButtonPressed(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     
@@ -41,11 +71,27 @@ class UserSettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        standardsPickerView.delegate = self
+        standardsPickerView.dataSource = self
         
         
+        if user != nil {
+            firstNameTextField.text = user!["firstName"] as? String
+            lastNameTextField.text = user!["lastName"] as? String
+            emailAddressTextField.text = user!["emailAddress"] as? String
+            schoolNameTextField.text = user!["schoolName"] as? String
+            currentStandardSelected.text = user!["standardJurisdiction"] as? String
+        }
     }
     
-
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
+    }
     
 
 }
@@ -67,8 +113,7 @@ extension UserSettingsViewController: UIPickerViewDelegate, UIPickerViewDataSour
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         standardsSetChanged = true
-        
-        
+        newStandardsJurisdiction = standardsPickerViewData[row]
     }
     
     func saveToParse(firstName: String, lastName: String, schoolName: String, emailAddress: String, standards: String?) {
@@ -78,14 +123,13 @@ extension UserSettingsViewController: UIPickerViewDelegate, UIPickerViewDataSour
             user["lastName"] = lastName
             user["email"] = emailAddress
             user["schoolName"] = schoolName
+            user["username"] = emailAddress
             if let newJurisdiction = self.newStandardsJurisdiction {
                 user["standardsJurisdiction"] = newJurisdiction
+                user.saveInBackgroundWithBlock(nil)
             }
         } else {
-            
             print("Error.  User is nil")
-
         }
     }
-    
 }

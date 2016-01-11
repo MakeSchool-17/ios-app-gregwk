@@ -12,6 +12,7 @@ import Parse
 class LoginScreenViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var warningLabel: UILabel!
     
     @IBOutlet weak var userNameTextField: UITextField?
@@ -26,28 +27,24 @@ class LoginScreenViewController: UIViewController, UITextFieldDelegate {
                  login(username, password: password)
             } else {
                 self.warningLabel.text = "The password field is empty!"
+                self.warningLabel.hidden  = false
             }
         } else {
             self.warningLabel.text = "The username field is empty!"
+            self.warningLabel.hidden = false
         }
-        
-        
-        
     }
-   
  
     @IBAction func signUpButtonPressed(sender: AnyObject) {
         //performs modal segue to SignUpViewController
     }
     
-    
     @IBAction func forgotPasswordButtonPressed(sender: AnyObject) {
         performSegueWithIdentifier("forgotPasswordSegue", sender: nil)
     }
     
-    
     func textFieldDidBeginEditing(textField: UITextField) {
-        scrollView.setContentOffset(CGPointMake(0, 250), animated: true)
+        scrollView.setContentOffset(CGPointMake(0, -250), animated: true)
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
@@ -60,13 +57,24 @@ class LoginScreenViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    func delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
+    
+    }
+    
 }
 
 extension LoginScreenViewController {
     
+    
+    
     func login(username: String, password: String) {
         let user = PFUser()
-        //check optional status BEFORE this function is called!
         user.username = username
         user.password = password
         
@@ -77,14 +85,16 @@ extension LoginScreenViewController {
                 dispatch_async(dispatch_get_main_queue()){
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let dashboardVC: UIViewController = storyboard.instantiateViewControllerWithIdentifier("dashboardViewController")
-                    
                     self.presentViewController(dashboardVC, animated: true, completion: nil)
-                
             }
             } else {
                 print("login failed")
+                self.warningLabel.text = "Invalid Login Credentials!"
+                self.warningLabel.hidden = false
+                self.delay(1.0){
+                    self.warningLabel.hidden = true
+                }
             }
-        
     })
 }
 
