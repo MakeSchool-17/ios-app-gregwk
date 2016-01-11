@@ -114,15 +114,11 @@ Assignment
 --Next Milestones--
 
     Begin Parsing JSON files from Common Standards Project.
-    Replace dummy implementations on creation pages with ones that create actual objects, save to Parse/Realm
+    Save data to Parse
     Implement single sign-in--once user has created a profile and signed in, use Parse's currentuser setting to skip sign in screen from then on.
     Server Synchronization.  NBD.
     
-    
-
-
     --debugging--
-        warning label for LoginViewController doesn't appear on empty inputs
         Scroll View doesnt adjust from open keyboard on LoginViewController 
 
 
@@ -143,8 +139,6 @@ Assignment
     -- Get classroom cells to segue to detail view on tap
     -- Get assignment cells to segue to detail view on tap
     -- Implement a student detail view for classroom
-    -- Add screen that allows teachers to edit classrooms that are already created
-    -- Add Screen that allows teachers to edit students that are already created
     -- ~~Add functionality that allows teachers to select students for assignments~~
     -- Add functionality that allows teachers to select entire classes for assignments
     -- ~~Add Screen that allows user to change settings~~
