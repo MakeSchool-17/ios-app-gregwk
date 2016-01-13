@@ -100,21 +100,26 @@ Assignment
 
     
     --debugging--
-        Scroll View doesnt adjust from open keyboard on LoginViewController 
+        Scroll View doesnt adjust from open keyboard on LoginViewController
+        Input validation images on student creation screen
+        New 
 
 
 ## Remaining Steps
 
-    -- input validation on step 2 of class creation
-    -- debug input validation for enrolling students during classroom creation
-    -- Move standards API call from app delegate to assignment creation track
-    -- Figure out full stucture of document from CommonStandards API
-    -- Populate standards selection table view with appropriate standards according to user selection of grade/subject
-    -- Implement single sign-in features from Parse
-    -- Implement Parse persistence of standards array
-    -- implement camera roll selection for assignment creation track
+    --finish all debugging tasks
+    -- Grab Standards from Common Standards API, or just dummy them. 
     -- Create dummy portfolio items to demo track
     -- Design and create custom table views for student portfolio views
+    -- Finish AssignToNewStudentsViewController
+    -- Persist Photo Storage for Student Assignment Detail View
+    -- Load students from Parse for Assignment Info View Controller
+    -- Implement swipe to delete assignment from student for Assignment Info View Controller
+    
+    
+
+    ##--Completed--
+    
     -- ~~Get classroom cells to segue to detail view on tap~~
     -- ~~Get assignment cells to segue to detail view on tap~~
     -- ~~Implement a student detail view for classroom~~
@@ -122,6 +127,8 @@ Assignment
     -- ~~Add Screen that allows user to change settings~~
     -- ~~Add screen that asks teacher to select jurisdiction for standards during sign up process~~ 
     -- ~~Implement camera view for assignment creation track~~
+    -- ~~Move standards API call from app delegate to assignment creation track~~
+    -- ~~Implement single sign-in features from Parse~~
     
 ## Copyright notes
 
@@ -145,6 +152,8 @@ Really sweet delay function by "@matt" found on SO (http://stackoverflow.com/que
 Calendar Date Picker for selecting assignment date during assignment creation/editing -- https://github.com/hons82/THCalendarDatePicker
 
 Code for PhotoTakingHelper.Swift borrowed with permission from Josh Archer, and from Make School Makestagram tutorial.
+
+Sweet app icon for Portfolio Tracker created by Tyler Hoffman (my friend, and the second best developer to ever come out of South Africa.)
 
 
 
