@@ -43,36 +43,24 @@ Parse
 
 ####Data Models
 
-Teacher
-    properties:
-        classroom -- Classroom object
-
-
-Classroom
-    properties:
-        studentRoster -- array of student objects
-        subject -- string
-        standards -- array of standards
-        assignments -- array of Assignment objects
-
-
 Student
     properties:
         firstName -- String
         lastName -- String
-        assignments -- Assignment Object
+        studentNumber -- String
+        assignments -- Array of Assignments
+        classes -- Array of Strings
         portfolio -- Portfolio Object
 
 Assignment
     properties:
-        standard -- string
-        studentWork -- file
-
-
-
-
-
-
+        assignmentName -- String
+        standard -- String
+        studentWork -- Array of UIImages
+        submitted -- Bool
+        passing -- Bool
+        dateAssigned -- String (result of NSDateFormatter)
+        
 
 ##MVP Milestones
 
@@ -124,18 +112,17 @@ Assignment
     -- Populate standards selection table view with appropriate standards according to user selection of grade/subject
     -- Implement single sign-in features from Parse
     -- Implement Parse persistence of standards array
-    -- Implement camera view for assignment creation track
     -- implement camera roll selection for assignment creation track
     -- Create dummy portfolio items to demo track
     -- Design and create custom table views for student portfolio views
-    -- Get classroom cells to segue to detail view on tap
-    -- Get assignment cells to segue to detail view on tap
-    -- Implement a student detail view for classroom
-    -- Add functionality that allows teachers to select entire classes for assignments
+    -- ~~Get classroom cells to segue to detail view on tap~~
+    -- ~~Get assignment cells to segue to detail view on tap~~
+    -- ~~Implement a student detail view for classroom~~
     -- ~~Add functionality that allows teachers to select students for assignments~~
     -- ~~Add Screen that allows user to change settings~~
     -- ~~Add screen that asks teacher to select jurisdiction for standards during sign up process~~ 
-
+    -- ~~Implement camera view for assignment creation track~~
+    
 ## Copyright notes
 
 list of all copyrighted material used in app
@@ -156,6 +143,8 @@ Fade in/Fade Out extensions learned from tutorial by Andrew Bancroft(https://www
 Really sweet delay function by "@matt" found on SO (http://stackoverflow.com/questions/24034544/dispatch-after-gcd-in-swift/24318861#24318861)
 
 Calendar Date Picker for selecting assignment date during assignment creation/editing -- https://github.com/hons82/THCalendarDatePicker
+
+Code for PhotoTakingHelper.Swift borrowed with permission from Josh Archer, and from Make School Makestagram tutorial.
 
 
 
