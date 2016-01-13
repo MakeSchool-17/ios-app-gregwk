@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -37,8 +36,6 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="OiK-Jz-vXD" firstAttribute="top" secondItem="fQZ-8l-mLr" secondAttribute="topMargin" constant="36" id="AYt-Mj-MHB"/>
-                    <constraint firstItem="5Lj-cc-y8a" firstAttribute="firstBaseline" secondItem="OiK-Jz-vXD" secondAttribute="firstBaseline" id="Ppa-4U-mdp"/>
-                    <constraint firstItem="5Lj-cc-y8a" firstAttribute="baseline" secondItem="OiK-Jz-vXD" secondAttribute="baseline" id="SHD-yK-cGD"/>
                     <constraint firstItem="5Lj-cc-y8a" firstAttribute="centerY" secondItem="fQZ-8l-mLr" secondAttribute="centerY" id="bbD-ZP-W5W"/>
                     <constraint firstItem="OiK-Jz-vXD" firstAttribute="leading" secondItem="fQZ-8l-mLr" secondAttribute="leadingMargin" constant="22" id="cr8-MT-aQF"/>
                     <constraint firstAttribute="trailing" secondItem="5Lj-cc-y8a" secondAttribute="trailing" constant="112" id="dwR-37-1xr"/>

@@ -33,11 +33,24 @@ class ViewStudentWorkForAssignmentViewController: UIViewController {
     
     @IBAction func getStudentWorkButtonPressed(sender: AnyObject) {
         takePhoto()
+    }
+    
+    @IBAction func passesStandardButtonPressed(sender: AnyObject) {
+        assignmentSelected.passing = !(assignmentSelected.passing)
         
-        
+        if assignmentSelected.passing == true {
+            meetsStandardImage.image = UIImage(named: "GreenCheck.png")
+        } else {
+            meetsStandardImage.image = UIImage(named: "RedX.png")
+        }
+    }
+    
+    
+    @IBAction func saveChangesButtonPressed(sender: AnyObject) {
         
         
     }
+    
     
     func takePhoto() {
         photoTakingHelper = PhotoTakingHelper(viewController: self) { (image: UIImage?) in
@@ -63,6 +76,14 @@ class ViewStudentWorkForAssignmentViewController: UIViewController {
             
         }
     }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "UnwindToStudentAssignmentsSegue" {
+            let nextVC = segue.destinationViewController as! StudentDetailViewController
+        }
+    }
 
 }
-
+//convert image from UIimage to NSData using UIimagejpegrepresentation
+//store image as PFfile.

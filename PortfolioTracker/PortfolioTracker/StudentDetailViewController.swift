@@ -18,6 +18,8 @@ class StudentDetailViewController: UIViewController {
     
     var assignmentToView: Assignment!
     
+    var updatedStudentWithAssignment: Student!
+    
     
     @IBAction func dismissButtonPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -49,6 +51,10 @@ class StudentDetailViewController: UIViewController {
             nextVC.assignmentSelected = assignmentToView
             nextVC.studentOwnsAssignment = studentSelected
         }
+    }
+    
+    @IBAction func unwindFromAssignmentDetailVC(sender: UIStoryboardSegue) {
+        
     }
 }
 

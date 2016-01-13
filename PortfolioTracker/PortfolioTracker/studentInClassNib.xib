@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -13,57 +12,43 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="110"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pn4-4K-TH6" id="LSl-mO-6fg">
-                <rect key="frame" x="0.0" y="0.0" width="1024" height="110"/>
+                <rect key="frame" x="0.0" y="0.0" width="1024" height="109.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name, First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQH-Rf-eup">
-                        <rect key="frame" x="8" y="18" width="320" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="1Be-IN-BEQ"/>
-                            <constraint firstAttribute="width" constant="320" id="rOP-0C-s62"/>
-                        </constraints>
+                        <rect key="frame" x="8" y="18" width="174" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWj-cS-HDj">
-                        <rect key="frame" x="8" y="58" width="320" height="21"/>
+                        <rect key="frame" x="8" y="59" width="132" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assignments Passing Standard:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1nc-87-wZf">
-                        <rect key="frame" x="631" y="57" width="265" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="265" id="Kf0-ks-taK"/>
-                        </constraints>
+                        <rect key="frame" x="765" y="66" width="241" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assignments Completed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dwo-nT-Oqi">
-                        <rect key="frame" x="679" y="18" width="217" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="217" id="Tug-Yc-N2a"/>
-                        </constraints>
+                        <rect key="frame" x="814" y="23" width="192" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="XWj-cS-HDj" firstAttribute="leading" secondItem="LSl-mO-6fg" secondAttribute="leadingMargin" id="Lu1-xH-WhH"/>
-                    <constraint firstAttribute="trailing" secondItem="dwo-nT-Oqi" secondAttribute="trailing" constant="128" id="MHT-VL-a3D"/>
-                    <constraint firstItem="zQH-Rf-eup" firstAttribute="top" secondItem="LSl-mO-6fg" secondAttribute="topMargin" constant="10" id="Wyd-Vy-Y3P"/>
-                    <constraint firstItem="dwo-nT-Oqi" firstAttribute="trailing" secondItem="1nc-87-wZf" secondAttribute="trailing" id="Z3R-ga-RtQ"/>
-                    <constraint firstItem="zQH-Rf-eup" firstAttribute="trailing" secondItem="XWj-cS-HDj" secondAttribute="trailing" id="bgn-jU-sOR"/>
-                    <constraint firstItem="1nc-87-wZf" firstAttribute="top" secondItem="dwo-nT-Oqi" secondAttribute="bottom" constant="18" id="gdf-4h-5ee"/>
-                    <constraint firstItem="dwo-nT-Oqi" firstAttribute="firstBaseline" secondItem="zQH-Rf-eup" secondAttribute="firstBaseline" id="jfa-io-ntd"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="XWj-cS-HDj" secondAttribute="bottom" constant="22.5" id="mUK-ab-Pcv"/>
-                    <constraint firstItem="XWj-cS-HDj" firstAttribute="leading" secondItem="zQH-Rf-eup" secondAttribute="leading" id="uJM-PZ-xiL"/>
-                    <constraint firstItem="XWj-cS-HDj" firstAttribute="top" secondItem="zQH-Rf-eup" secondAttribute="bottom" constant="19" id="uuR-gV-DLK"/>
-                    <constraint firstItem="dwo-nT-Oqi" firstAttribute="baseline" secondItem="zQH-Rf-eup" secondAttribute="baseline" id="wHm-ab-Tf7"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="1nc-87-wZf" secondAttribute="bottom" constant="23.5" id="x9P-Dc-4bI"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="1nc-87-wZf" secondAttribute="bottom" constant="15" id="MxD-Tj-4OQ"/>
+                    <constraint firstItem="dwo-nT-Oqi" firstAttribute="top" secondItem="LSl-mO-6fg" secondAttribute="topMargin" constant="15" id="WFk-5S-cX2"/>
+                    <constraint firstItem="zQH-Rf-eup" firstAttribute="top" secondItem="LSl-mO-6fg" secondAttribute="topMargin" constant="10" id="XIa-m1-chK"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="XWj-cS-HDj" secondAttribute="bottom" constant="22.5" id="ax0-8r-yTA"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="XWj-cS-HDj" secondAttribute="leading" id="cOZ-s2-i5Z"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="1nc-87-wZf" secondAttribute="trailing" constant="10" id="dVe-pc-UEo"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="dwo-nT-Oqi" secondAttribute="trailing" constant="10" id="oaF-Ki-P6p"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="zQH-Rf-eup" secondAttribute="leading" id="ouW-Vj-vbs"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
