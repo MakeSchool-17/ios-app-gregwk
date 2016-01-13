@@ -17,6 +17,11 @@ class AssignmentsListViewController: UIViewController {
     @IBOutlet weak var assignmentTableView: UITableView!
     var assignmentToView: Assignment!
     
+    
+    @IBAction func UnwindToAssignmentScreen(sender: UIStoryboardSegue) {
+    
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,11 +72,15 @@ class AssignmentsListViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        assignmentTableView.reloadData()
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ViewAssignmentDetailsSegue" {
             let nextVC = segue.destinationViewController as! IndividualAssignmentInfoViewController
             nextVC.assignmentSelected = assignmentToView
+            
             
         }
     }

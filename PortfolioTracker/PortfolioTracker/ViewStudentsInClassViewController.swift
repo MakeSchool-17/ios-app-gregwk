@@ -7,12 +7,21 @@
 //
 
 import UIKit
+import Parse
 
 class ViewStudentsInClassViewController: UIViewController {
     
     var classSelected: Classroom!
     
     var studentToView: Student!
+    
+    var studentsFromQuery: Array<Student>!
+    
+    
+    
+        
+    
+    
     
     @IBOutlet weak var studentsInClassTableView: UITableView!
     
@@ -31,6 +40,25 @@ class ViewStudentsInClassViewController: UIViewController {
         studentsInClassTableView.registerNib(nib, forCellReuseIdentifier: "StudentsInClassCell")
         studentsInClassTableView.reloadData()
         print("view loaded")
+        
+        let query = PFQuery(className: "Student")
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                print("retrieved \(objects!.count) students.")
+                
+                if let objects = objects {
+                    for student in objects {
+                        print("\(student)")
+                    }
+                    self.studentsFromQuery = objects as! Array<Student>
+                    self.studentsInClassTableView.reloadData()
+                }
+            } else {
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
     
     }
 
@@ -54,35 +82,29 @@ extension ViewStudentsInClassViewController: UITableViewDataSource, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = studentsInClassTableView.dequeueReusableCellWithIdentifier("StudentsInClassCell") as! StudentInClassTableViewCell
         //MARK: Getting data to display from student
-        let studentToDisplay: Student = classSelected.classRoster[indexPath.row]
-        let studentFirstName: String = studentToDisplay.firstName
-        let studentLastName: String = studentToDisplay.lastName
-        let studentNumber: String = studentToDisplay.studentNumber
-        let assignmentsCompleted: String = "\(studentToDisplay.assignments.count)"
-        var assignmentsPassing: String {
-            var passing = 0
-            for assignment in studentToDisplay.assignments {
-                if assignment.passing == true {
-                    passing += 1
-                }
-            }
-            return "\(passing)"
-        }
-        //MARK: Setting labels inside cell
+        if studentsFromQuery != nil {
+        let studentToDisplay: Student = studentsFromQuery[indexPath.row]
+        let studentFirstName = studentToDisplay["firstName"]
+        let studentLastName = studentToDisplay["lastName"]
+        let studentNumber = studentToDisplay["studentNumber"]
+                //MARK: Setting labels inside cell
         cell.studentNameLabel.text = "\(studentLastName), \(studentFirstName)"
         cell.studentNumberLabel.text = "Student Number:  \(studentNumber)"
-        cell.assignmentsCompletedLabel.text = "Assignments Completed: " + assignmentsCompleted
-        cell.assignmentsPassingLabel.text = "Assignments Passing: " + assignmentsPassing
-        
+        }
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return classSelected.classRoster.count
+        if let studentList = studentsFromQuery {
+                return studentList.count
+        } else {
+            return 0
+        }
+        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        studentToView = classSelected.classRoster[indexPath.row]
+        studentToView = studentsFromQuery[indexPath.row]
         performSegueWithIdentifier("ShowStudentsInClassSegue", sender: nil)
     }
     

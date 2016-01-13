@@ -12,53 +12,36 @@
             <rect key="frame" x="0.0" y="0.0" width="1024" height="110"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6h8-L5-Msw" id="5e3-Hg-zPl">
-                <rect key="frame" x="0.0" y="0.0" width="1024" height="110"/>
+                <rect key="frame" x="0.0" y="0.0" width="1024" height="109.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Standard Description Lorem Ipsum dolor cicero cicero cicero...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="906-4R-xzj">
-                        <rect key="frame" x="8" y="53" width="1008" height="21"/>
+                        <rect key="frame" x="22" y="62" width="983" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.32661158376963351" green="0.32661158376963351" blue="0.32661158376963351" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenCheck.png" translatesAutoresizingMaskIntoConstraints="NO" id="32Y-D2-Y5W">
-                        <rect key="frame" x="476" y="28" width="46" height="46"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="46" id="WHG-T0-CJE"/>
-                        </constraints>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Standard Short Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8F6-qL-ER2">
-                        <rect key="frame" x="8" y="28" width="162" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="eWG-4W-191"/>
-                            <constraint firstAttribute="width" constant="162" id="y3e-B4-3fG"/>
-                        </constraints>
+                        <rect key="frame" x="22" y="28" width="370" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="32Y-D2-Y5W" firstAttribute="top" secondItem="8F6-qL-ER2" secondAttribute="top" id="7eG-hZ-F3w"/>
-                    <constraint firstItem="32Y-D2-Y5W" firstAttribute="leading" secondItem="5e3-Hg-zPl" secondAttribute="leading" constant="476" id="BPb-GP-M5o"/>
-                    <constraint firstItem="8F6-qL-ER2" firstAttribute="top" secondItem="5e3-Hg-zPl" secondAttribute="topMargin" constant="20" id="GPs-Ou-scV"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="32Y-D2-Y5W" secondAttribute="bottom" constant="27.5" id="QER-qt-MPn"/>
-                    <constraint firstItem="8F6-qL-ER2" firstAttribute="leading" secondItem="906-4R-xzj" secondAttribute="leading" id="Wbb-az-HU9"/>
-                    <constraint firstItem="906-4R-xzj" firstAttribute="trailing" secondItem="5e3-Hg-zPl" secondAttribute="trailingMargin" id="tbB-Fe-xfE"/>
-                    <constraint firstItem="32Y-D2-Y5W" firstAttribute="bottom" secondItem="906-4R-xzj" secondAttribute="bottom" id="v5J-bH-ng0"/>
-                    <constraint firstItem="906-4R-xzj" firstAttribute="top" secondItem="8F6-qL-ER2" secondAttribute="bottom" constant="4" id="w6F-Fm-6rB"/>
-                    <constraint firstItem="8F6-qL-ER2" firstAttribute="leading" secondItem="5e3-Hg-zPl" secondAttribute="leadingMargin" id="wJk-mC-F8W"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="906-4R-xzj" secondAttribute="trailing" constant="11" id="9UI-Oq-ptk"/>
+                    <constraint firstItem="906-4R-xzj" firstAttribute="leading" secondItem="5e3-Hg-zPl" secondAttribute="leadingMargin" constant="14" id="Eal-r6-XgJ"/>
+                    <constraint firstItem="8F6-qL-ER2" firstAttribute="leading" secondItem="5e3-Hg-zPl" secondAttribute="leadingMargin" constant="14" id="Fuz-3K-QBN"/>
+                    <constraint firstItem="8F6-qL-ER2" firstAttribute="top" secondItem="5e3-Hg-zPl" secondAttribute="topMargin" constant="20" id="KfM-nA-FCC"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="906-4R-xzj" secondAttribute="bottom" constant="23.5" id="VaW-Do-Ja8"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="8F6-qL-ER2" secondAttribute="trailing" constant="624" id="veF-gG-Tmr"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="descriptionLabel" destination="906-4R-xzj" id="vxr-QE-951"/>
                 <outlet property="shortCodeLabel" destination="8F6-qL-ER2" id="DFb-he-EDS"/>
-                <outlet property="standardSelectedImage" destination="32Y-D2-Y5W" id="VLw-Gu-vRh"/>
             </connections>
             <point key="canvasLocation" x="369" y="416"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="greenCheck.png" width="58" height="58"/>
-    </resources>
 </document>

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E40A69F61C1A6F5B0041EEC4 /* GetAssignmentFromCameraRollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40A69F51C1A6F5B0041EEC4 /* GetAssignmentFromCameraRollViewController.swift */; };
 		E40A69FA1C1A7A940041EEC4 /* IndividualAssignmentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40A69F91C1A7A940041EEC4 /* IndividualAssignmentInfoViewController.swift */; };
 		E40A69FE1C1B92AB0041EEC4 /* AssignToNewStudentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40A69FD1C1B92AB0041EEC4 /* AssignToNewStudentsViewController.swift */; };
 		E40A6A001C1BA3370041EEC4 /* ViewStudentWorkForAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40A69FF1C1BA3370041EEC4 /* ViewStudentWorkForAssignmentViewController.swift */; };
@@ -27,6 +26,9 @@
 		E42916DA1C44B568002F68FF /* AssignmentInfoForStudentNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = E42916D91C44B568002F68FF /* AssignmentInfoForStudentNib.xib */; };
 		E42916DC1C44B6B2002F68FF /* AssignmentInforForStudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42916DB1C44B6B2002F68FF /* AssignmentInforForStudentTableViewCell.swift */; };
 		E42916DE1C44BA5B002F68FF /* StudentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42916DD1C44BA5B002F68FF /* StudentDetailViewController.swift */; };
+		E42916E01C45F604002F68FF /* DummyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42916DF1C45F604002F68FF /* DummyHelper.swift */; };
+		E42916E21C46D991002F68FF /* SelectAssigneesTableViewCellNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = E42916E11C46D991002F68FF /* SelectAssigneesTableViewCellNib.xib */; };
+		E42916E41C46DA05002F68FF /* SelectAssigneesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42916E31C46DA05002F68FF /* SelectAssigneesTableViewCell.swift */; };
 		E45659871C1A414B008551E3 /* CreateStudentsForClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45659861C1A414B008551E3 /* CreateStudentsForClassViewController.swift */; };
 		E45659891C1A542A008551E3 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45659881C1A542A008551E3 /* UIViewExtensions.swift */; };
 		E45B46AF1C2361B400F6FE64 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45B46AE1C2361B400F6FE64 /* Server.swift */; };
@@ -35,7 +37,6 @@
 		E46364011C165A6500D85472 /* Standard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46364001C165A6500D85472 /* Standard.swift */; };
 		E46364031C17875F00D85472 /* SelectStandardForAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46364021C17875F00D85472 /* SelectStandardForAssignmentViewController.swift */; };
 		E46364051C178B7C00D85472 /* SelectAssigneesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46364041C178B7C00D85472 /* SelectAssigneesViewController.swift */; };
-		E46364071C178B9E00D85472 /* StudentOrClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46364061C178B9E00D85472 /* StudentOrClassViewController.swift */; };
 		E48893AB1C03FE200054992F /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48893AA1C03FE200054992F /* LoginScreenViewController.swift */; };
 		E4A03F6D1C0BB7A0009F3DCE /* Drawing.png in Resources */ = {isa = PBXBuildFile; fileRef = E4A03F6C1C0BB7A0009F3DCE /* Drawing.png */; };
 		E4A03F6F1C0CAB50009F3DCE /* CreateNewClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A03F6E1C0CAB50009F3DCE /* CreateNewClassViewController.swift */; };
@@ -64,7 +65,6 @@
 /* Begin PBXFileReference section */
 		04B5709E66F11321F1DDE8EE /* Pods_PortfolioTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PortfolioTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		734B906DDA97765A9504343C /* Pods-PortfolioTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortfolioTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PortfolioTracker/Pods-PortfolioTracker.debug.xcconfig"; sourceTree = "<group>"; };
-		E40A69F51C1A6F5B0041EEC4 /* GetAssignmentFromCameraRollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAssignmentFromCameraRollViewController.swift; sourceTree = "<group>"; };
 		E40A69F91C1A7A940041EEC4 /* IndividualAssignmentInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndividualAssignmentInfoViewController.swift; sourceTree = "<group>"; };
 		E40A69FD1C1B92AB0041EEC4 /* AssignToNewStudentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignToNewStudentsViewController.swift; sourceTree = "<group>"; };
 		E40A69FF1C1BA3370041EEC4 /* ViewStudentWorkForAssignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStudentWorkForAssignmentViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +84,9 @@
 		E42916D91C44B568002F68FF /* AssignmentInfoForStudentNib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AssignmentInfoForStudentNib.xib; sourceTree = "<group>"; };
 		E42916DB1C44B6B2002F68FF /* AssignmentInforForStudentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentInforForStudentTableViewCell.swift; sourceTree = "<group>"; };
 		E42916DD1C44BA5B002F68FF /* StudentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentDetailViewController.swift; sourceTree = "<group>"; };
+		E42916DF1C45F604002F68FF /* DummyHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyHelper.swift; sourceTree = "<group>"; };
+		E42916E11C46D991002F68FF /* SelectAssigneesTableViewCellNib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectAssigneesTableViewCellNib.xib; sourceTree = "<group>"; };
+		E42916E31C46DA05002F68FF /* SelectAssigneesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectAssigneesTableViewCell.swift; sourceTree = "<group>"; };
 		E444D0431C06D8690052D6EA /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		E45659861C1A414B008551E3 /* CreateStudentsForClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateStudentsForClassViewController.swift; sourceTree = "<group>"; };
 		E45659881C1A542A008551E3 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
@@ -93,7 +96,6 @@
 		E46364001C165A6500D85472 /* Standard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Standard.swift; sourceTree = "<group>"; };
 		E46364021C17875F00D85472 /* SelectStandardForAssignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectStandardForAssignmentViewController.swift; sourceTree = "<group>"; };
 		E46364041C178B7C00D85472 /* SelectAssigneesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectAssigneesViewController.swift; sourceTree = "<group>"; };
-		E46364061C178B9E00D85472 /* StudentOrClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentOrClassViewController.swift; sourceTree = "<group>"; };
 		E48893AA1C03FE200054992F /* LoginScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
 		E4A03F6C1C0BB7A0009F3DCE /* Drawing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Drawing.png; sourceTree = "<group>"; };
 		E4A03F6E1C0CAB50009F3DCE /* CreateNewClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewClassViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				E425DAE01C40AD1000573EFA /* SelectStandardTableViewCell.swift */,
 				E425DAE41C41D78B00573EFA /* StudentsWithAssignmentTableViewCell.swift */,
 				E42916DB1C44B6B2002F68FF /* AssignmentInforForStudentTableViewCell.swift */,
+				E42916E31C46DA05002F68FF /* SelectAssigneesTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				E425DADE1C40AC6300573EFA /* SelectStandardNib.xib */,
 				E425DAE21C41D6CA00573EFA /* StudentsWithAssignmentNib.xib */,
 				E42916D91C44B568002F68FF /* AssignmentInfoForStudentNib.xib */,
+				E42916E11C46D991002F68FF /* SelectAssigneesTableViewCellNib.xib */,
 			);
 			name = Nibs;
 			sourceTree = "<group>";
@@ -185,6 +189,7 @@
 				E45659881C1A542A008551E3 /* UIViewExtensions.swift */,
 				E45B46AE1C2361B400F6FE64 /* Server.swift */,
 				E42916D71C4462B3002F68FF /* PhotoTakingHelper.swift */,
+				E42916DF1C45F604002F68FF /* DummyHelper.swift */,
 			);
 			name = "Helper Files";
 			sourceTree = "<group>";
@@ -192,12 +197,10 @@
 		E46364081C178E6600D85472 /* Assignments */ = {
 			isa = PBXGroup;
 			children = (
-				E4A03F701C0CABB7009F3DCE /* CreateNewAssignmentViewController.swift */,
 				E4A03F741C0CADE3009F3DCE /* AssignmentsListViewController.swift */,
+				E4A03F701C0CABB7009F3DCE /* CreateNewAssignmentViewController.swift */,
 				E46364021C17875F00D85472 /* SelectStandardForAssignmentViewController.swift */,
 				E46364041C178B7C00D85472 /* SelectAssigneesViewController.swift */,
-				E46364061C178B9E00D85472 /* StudentOrClassViewController.swift */,
-				E40A69F51C1A6F5B0041EEC4 /* GetAssignmentFromCameraRollViewController.swift */,
 				E40A69F91C1A7A940041EEC4 /* IndividualAssignmentInfoViewController.swift */,
 				E40A69FD1C1B92AB0041EEC4 /* AssignToNewStudentsViewController.swift */,
 				E40A69FF1C1BA3370041EEC4 /* ViewStudentWorkForAssignmentViewController.swift */,
@@ -372,6 +375,7 @@
 			files = (
 				E4B3F8441C3C6281008ADE08 /* CurrentClassesTableView.xib in Resources */,
 				E425DADF1C40AC6300573EFA /* SelectStandardNib.xib in Resources */,
+				E42916E21C46D991002F68FF /* SelectAssigneesTableViewCellNib.xib in Resources */,
 				E4DBA81C1C115C83002E9BB8 /* greenCheck.png in Resources */,
 				E4ECCE721C03BA38002D089C /* LaunchScreen.storyboard in Resources */,
 				E46363F91C155F0F00D85472 /* assignment_by_class.png in Resources */,
@@ -448,16 +452,15 @@
 				E425DAE51C41D78B00573EFA /* StudentsWithAssignmentTableViewCell.swift in Sources */,
 				E4A03F711C0CABB7009F3DCE /* CreateNewAssignmentViewController.swift in Sources */,
 				E40A69FA1C1A7A940041EEC4 /* IndividualAssignmentInfoViewController.swift in Sources */,
+				E42916E01C45F604002F68FF /* DummyHelper.swift in Sources */,
 				E4A03F6F1C0CAB50009F3DCE /* CreateNewClassViewController.swift in Sources */,
 				E40E16BD1C1F56B600B0399D /* AssignmentTableViewCell.swift in Sources */,
-				E46364071C178B9E00D85472 /* StudentOrClassViewController.swift in Sources */,
 				E4ECCE6D1C03BA38002D089C /* PortfolioTracker.xcdatamodeld in Sources */,
 				E40A6A001C1BA3370041EEC4 /* ViewStudentWorkForAssignmentViewController.swift in Sources */,
 				E40A6A021C1BA4B30041EEC4 /* EditAssignmentViewController.swift in Sources */,
 				E4A03F751C0CADE3009F3DCE /* AssignmentsListViewController.swift in Sources */,
 				E425DAE11C40AD1000573EFA /* SelectStandardTableViewCell.swift in Sources */,
 				E45B46AF1C2361B400F6FE64 /* Server.swift in Sources */,
-				E40A69F61C1A6F5B0041EEC4 /* GetAssignmentFromCameraRollViewController.swift in Sources */,
 				E45659891C1A542A008551E3 /* UIViewExtensions.swift in Sources */,
 				E40E16C31C1F5DC900B0399D /* Student.swift in Sources */,
 				E46364051C178B7C00D85472 /* SelectAssigneesViewController.swift in Sources */,
@@ -468,6 +471,7 @@
 				E425DADA1C407C7200573EFA /* StudentInClassTableViewCell.swift in Sources */,
 				E4B3F8481C3DBCA6008ADE08 /* UserSettingsViewController.swift in Sources */,
 				E46364031C17875F00D85472 /* SelectStandardForAssignmentViewController.swift in Sources */,
+				E42916E41C46DA05002F68FF /* SelectAssigneesTableViewCell.swift in Sources */,
 				E425DADC1C407E5E00573EFA /* ViewStudentsInClassViewController.swift in Sources */,
 				E48893AB1C03FE200054992F /* LoginScreenViewController.swift in Sources */,
 				E4E0D4C71C04144E000BCC1D /* ClassesViewController.swift in Sources */,

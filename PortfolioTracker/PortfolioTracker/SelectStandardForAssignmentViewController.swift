@@ -18,6 +18,10 @@ class SelectStandardForAssignmentViewController: UIViewController {
     var allApplicableStandards: Array<Standard> = []
     var standardSelected: Standard!
     
+    var gradeLevel: String!
+    var subjectSelected: String!
+    var assignmentCreated: Assignment!
+    
     @IBOutlet weak var standardSelectionTableView: UITableView!
     
 
@@ -60,8 +64,13 @@ class SelectStandardForAssignmentViewController: UIViewController {
         standardSelectionTableView.registerNib(nib, forCellReuseIdentifier: "SelectStandardCell")
         
     }
-        
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SelectAssigneesSegue" {
+            let nextVC = segue.destinationViewController as! SelectAssigneesViewController
+            nextVC.standardSelected = standardSelected
+        }
+    }
 
 }
 
@@ -77,10 +86,12 @@ extension SelectStandardForAssignmentViewController: UITableViewDataSource, UITa
         
         cell.shortCodeLabel.text = standard.shortCode
         cell.descriptionLabel.text = standard.descriptionOfStandard
-        if standardSelected == standard {
-            cell.standardSelectedImage.hidden = false
-        } else {
-            cell.standardSelectedImage.hidden = true
+        if let standardSelected = standardSelected {
+            if standardSelected == standard {
+                cell.accessoryType = .Checkmark
+            } else {
+                cell.accessoryType = .None
+            }
         }
         
         return cell
@@ -92,6 +103,7 @@ extension SelectStandardForAssignmentViewController: UITableViewDataSource, UITa
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         standardSelected = allApplicableStandards[indexPath.row]
+        tableView.reloadData()
         
     }
     

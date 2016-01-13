@@ -47,6 +47,8 @@ class ViewStudentWorkForAssignmentViewController: UIViewController {
     
     
     @IBAction func saveChangesButtonPressed(sender: AnyObject) {
+        assignmentSelected.saveToParse()
+        performSegueWithIdentifier("UnwindToStudentAssignmentsSegue", sender: nil)
         
         
     }

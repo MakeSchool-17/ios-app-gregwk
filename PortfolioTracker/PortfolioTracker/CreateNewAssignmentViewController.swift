@@ -25,6 +25,8 @@ class CreateNewAssignmentViewController: UIViewController {
     var selectedSubject: String!
     var selectedGradeLevel: String!
     
+    var newAssignment = Assignment()
+    
     
     let subjectPickerViewData = ["All Subjects", "Math", "Reading", "History", "Science"]
     
@@ -35,10 +37,27 @@ class CreateNewAssignmentViewController: UIViewController {
     }
     
     @IBAction func continueButtonPressed(sender: AnyObject) {
-        
-        
+        if (validateUserInput() == true) {
+            newAssignment.assignmentName = assignmentNameTextLabel.text
+            
+        }
         
     }
+    
+    func validateUserInput() -> Bool {
+        if assignmentNameTextLabel.text == nil || assignmentNameTextLabel.text == "" {
+            return false
+        }
+        
+        if selectedGradeLevel == nil || selectedSubject == nil {
+            return false
+        }
+        
+        return true
+            
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         subjectPickerView.dataSource = self
@@ -47,6 +66,15 @@ class CreateNewAssignmentViewController: UIViewController {
         gradeLevelPickerView.dataSource = self
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "SelectStandardSegue" {
+            let nextVC = segue.destinationViewController as! SelectStandardForAssignmentViewController
+            nextVC.gradeLevel = selectedGradeLevel
+            nextVC.subjectSelected = selectedSubject
+            nextVC.assignmentCreated = newAssignment
+        }
+    }
+    
 }
 
 extension CreateNewAssignmentViewController: UIPickerViewDataSource, UIPickerViewDelegate {
