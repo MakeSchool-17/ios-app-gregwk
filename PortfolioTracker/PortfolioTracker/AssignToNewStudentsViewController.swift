@@ -26,19 +26,13 @@ class AssignToNewStudentsViewController: UIViewController {
     }
     
     
-    
-    
-    
-    
     @IBAction func backButtonPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
     
-
+    
 }
-
-
 
 
 
@@ -49,7 +43,6 @@ extension AssignToNewStudentsViewController: UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

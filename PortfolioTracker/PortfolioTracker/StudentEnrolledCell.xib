@@ -4,29 +4,31 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="143" id="W3p-wX-dUd" customClass="StudentEnrolledTableViewCell" customModule="PortfolioTracker" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="568" height="143"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="110" id="W3p-wX-dUd" customClass="StudentEnrolledTableViewCell" customModule="PortfolioTracker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="110"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="W3p-wX-dUd" id="OXq-7T-w9a">
-                <rect key="frame" x="0.0" y="0.0" width="568" height="143"/>
+                <rect key="frame" x="0.0" y="0.0" width="1024" height="110"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name, First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVR-xz-3by">
-                        <rect key="frame" x="8" y="61" width="305" height="21"/>
+                        <rect key="frame" x="8" y="44" width="305" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="305" id="PEr-6a-mAS"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xf-Lj-O5K">
-                        <rect key="frame" x="343" y="59" width="181" height="21"/>
+                        <rect key="frame" x="787" y="44" width="181" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="181" id="H8L-2B-uTo"/>
+                            <constraint firstAttribute="width" constant="181" id="NgV-h4-OTa"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -34,13 +36,12 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="gVR-xz-3by" firstAttribute="leading" secondItem="OXq-7T-w9a" secondAttribute="leadingMargin" id="6JL-gb-eV2"/>
-                    <constraint firstItem="9xf-Lj-O5K" firstAttribute="leading" secondItem="gVR-xz-3by" secondAttribute="trailing" constant="30" id="8kA-Hc-TYY"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="9xf-Lj-O5K" secondAttribute="trailing" constant="36" id="KMZ-Zo-ADv"/>
-                    <constraint firstItem="gVR-xz-3by" firstAttribute="baseline" secondItem="9xf-Lj-O5K" secondAttribute="firstBaseline" id="Mlm-Ij-pzO"/>
-                    <constraint firstItem="9xf-Lj-O5K" firstAttribute="top" secondItem="OXq-7T-w9a" secondAttribute="topMargin" constant="51" id="ZVN-na-c32"/>
-                    <constraint firstItem="gVR-xz-3by" firstAttribute="centerY" secondItem="OXq-7T-w9a" secondAttribute="centerY" id="ueX-bl-0hv"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="9xf-Lj-O5K" secondAttribute="bottom" constant="54.5" id="vo1-ER-mwh"/>
+                    <constraint firstItem="gVR-xz-3by" firstAttribute="leading" secondItem="OXq-7T-w9a" secondAttribute="leadingMargin" id="5YU-zS-PaU"/>
+                    <constraint firstItem="gVR-xz-3by" firstAttribute="firstBaseline" secondItem="9xf-Lj-O5K" secondAttribute="firstBaseline" id="I8t-ck-KN9"/>
+                    <constraint firstItem="9xf-Lj-O5K" firstAttribute="baseline" secondItem="gVR-xz-3by" secondAttribute="baseline" id="Jeu-rj-2z9"/>
+                    <constraint firstItem="gVR-xz-3by" firstAttribute="top" secondItem="OXq-7T-w9a" secondAttribute="topMargin" constant="36" id="exE-9u-1KL"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="9xf-Lj-O5K" secondAttribute="trailing" constant="48" id="kc2-kz-Sq1"/>
+                    <constraint firstItem="9xf-Lj-O5K" firstAttribute="centerY" secondItem="OXq-7T-w9a" secondAttribute="centerY" id="r8b-Hu-alx"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

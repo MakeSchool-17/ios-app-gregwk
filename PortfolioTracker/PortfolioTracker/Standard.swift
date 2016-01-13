@@ -10,41 +10,6 @@ import UIKit
 import Foundation
 import Parse
 
-enum State: String {
-    case CommonCore
-    case Oklahoma
-    case Texas
-    case Virginia
-    case Alaska
-    case Nebraska
-    case Indiana
-    case SouthCarolina
-    case Minnesota
-}
-
-enum GradeLevel: String {
-    case Kindergarten
-    case G1
-    case G2
-    case G3
-    case G4
-    case G5
-    case G6
-    case G7
-    case G8
-    case G9
-    case G10
-    case G11
-    case G12
-}
-
-enum Subject: String {
-    case ELA
-    case Math
-    case History
-    case Science
-}
-
 class Standard: PFObject, PFSubclassing {
     
     var shortCode: String!
@@ -64,7 +29,20 @@ class Standard: PFObject, PFSubclassing {
         return "Standard"
     }
 
-    
+    func saveToParse() {
+        let standard = PFObject(className: "Standard")
+        standard["shortCode"] = shortCode
+        standard[descriptionOfStandard] = "\(descriptionOfStandard)  Clarification:\(clarification)"
+        
+        standard.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if(success) {
+                return
+            } else {
+                debugPrint(error?.description)
+            }
+        }
+    }
     
     
 }

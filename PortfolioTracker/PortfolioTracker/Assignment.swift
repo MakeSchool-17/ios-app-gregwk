@@ -17,7 +17,7 @@ class Assignment: PFObject, PFSubclassing {
     var assignmentName: String!
     var submitted: Bool = false
     var passing: Bool = false
-    var studentWork: PFFile?
+    var studentWork: Array<UIImage> = []
     
    
     
@@ -26,8 +26,8 @@ class Assignment: PFObject, PFSubclassing {
         
     }
     
-    func attachStudentWorkToAssignment(work: PFFile) {
-        studentWork = work
+    func attachStudentWorkToAssignment(work: UIImage) {
+        studentWork.append(work)
     }
     
     func toggleTurnedInStatus() {
@@ -50,6 +50,15 @@ class Assignment: PFObject, PFSubclassing {
         assignment["submitted"] = self.submitted
         assignment["passing"] = self.passing
         assignment["studentWork"]  = self.studentWork
+        
+        assignment.saveInBackgroundWithBlock {
+        (success: Bool, error: NSError?) -> Void in
+            if(success) {
+                return
+            } else {
+                debugPrint(error?.description)
+            }
+        }
     }
     
     

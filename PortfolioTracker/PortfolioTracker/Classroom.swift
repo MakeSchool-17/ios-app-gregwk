@@ -48,6 +48,4 @@ class Classroom: PFObject, PFSubclassing {
     static func parseClassName() -> String {
         return "Class"
     }
-    
-    
 }

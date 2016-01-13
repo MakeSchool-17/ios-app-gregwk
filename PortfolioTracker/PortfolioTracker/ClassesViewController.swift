@@ -38,6 +38,13 @@ class ClassesViewController: UIViewController {
         listOfClassesTableView.reloadData()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ViewStudentsInClassSegue" {
+            let nextVC = segue.destinationViewController as! ViewStudentsInClassViewController
+            nextVC.classSelected = allClasses[cellSelectedIndex]
+        }
+    }
+    
 }
 
 
@@ -66,11 +73,6 @@ extension ClassesViewController: UITableViewDataSource, UITableViewDelegate {
         performSegueWithIdentifier("ViewStudentsInClassSegue", sender: nil)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ViewStudentsInClassSegue" {
-            let nextVC = segue.destinationViewController as! ViewStudentsInClassViewController
-            nextVC.classSelected = allClasses[cellSelectedIndex]
-        }
-    }
+    
     
 }

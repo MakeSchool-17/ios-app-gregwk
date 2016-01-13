@@ -16,7 +16,7 @@ class Student: PFObject, PFSubclassing {
     var lastName: String!
     var studentNumber: String!
     var assignments: Array<Assignment> = []
-    var portfolioCompletionPercentage: Float!
+    var classes: Array<String> = []
     
     override class func initialize() {
         struct Static {
@@ -31,6 +31,24 @@ class Student: PFObject, PFSubclassing {
         return "Student"
     }
     
+    
+    func saveToParse() {
+        let student = PFObject(className: "Student")
+        student["firstName"] = firstName
+        student["lastName"] = lastName
+        student["studentNumber"] = studentNumber
+        student["assignments"] = assignments
+        student["classes"] = classes
+        
+        student.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if(success) {
+                return
+            } else {
+                debugPrint(error?.description)
+            }
+        }
+    }
 
 }
     

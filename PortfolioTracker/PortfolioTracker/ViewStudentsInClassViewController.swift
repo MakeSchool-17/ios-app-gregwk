@@ -12,6 +12,8 @@ class ViewStudentsInClassViewController: UIViewController {
     
     var classSelected: Classroom!
     
+    var studentToView: Student!
+    
     @IBOutlet weak var studentsInClassTableView: UITableView!
     
     @IBAction func backButtonPressed(sender: AnyObject) {
@@ -33,7 +35,12 @@ class ViewStudentsInClassViewController: UIViewController {
     }
 
     
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowStudentsInClassSegue" {
+            let nextVC = segue.destinationViewController as! StudentDetailViewController
+            nextVC.studentSelected = studentToView
+        }
+    }
 
     
     
@@ -42,6 +49,8 @@ class ViewStudentsInClassViewController: UIViewController {
 
 extension ViewStudentsInClassViewController: UITableViewDataSource, UITableViewDelegate {
     //MARK: Tableview datasource functions
+    
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = studentsInClassTableView.dequeueReusableCellWithIdentifier("StudentsInClassCell") as! StudentInClassTableViewCell
         //MARK: Getting data to display from student
@@ -70,6 +79,11 @@ extension ViewStudentsInClassViewController: UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return classSelected.classRoster.count
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        studentToView = classSelected.classRoster[indexPath.row]
+        performSegueWithIdentifier("ShowStudentsInClassSegue", sender: nil)
     }
     
     

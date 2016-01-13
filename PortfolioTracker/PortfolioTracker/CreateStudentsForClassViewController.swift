@@ -63,6 +63,8 @@ class CreateStudentsForClassViewController: UIViewController {
             newStudent.firstName = studentFirstName
             newStudent.lastName = studentLastName
             newStudent.studentNumber = studentNumber
+            newStudent.classes.append(newlyCreatedClass.className)
+            newStudent.saveToParse()
             newlyCreatedClass.enrollStudent(newStudent)
             outcomeLabel.textColor = UIColor.greenColor()
             outcomeLabel.text = "\(studentFirstName!) \(studentLastName!) added to class!"
