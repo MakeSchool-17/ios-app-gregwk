@@ -102,7 +102,7 @@ Assignment
     --debugging--
         Scroll View doesnt adjust from open keyboard on LoginViewController
         Input validation images on student creation screen
-        New 
+        
 
 
 ## Remaining Steps
@@ -115,8 +115,7 @@ Assignment
     -- Persist Photo Storage for Student Assignment Detail View
     -- Load students from Parse for Assignment Info View Controller
     -- Implement swipe to delete assignment from student for Assignment Info View Controller
-    
-    
+    -- Add Icons to Tab Bar View Controller
 
     ##--Completed--
     
