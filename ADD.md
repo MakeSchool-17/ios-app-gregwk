@@ -92,11 +92,7 @@ Assignment
 
 
 --Next Milestones--
-
-    Begin Parsing JSON from Common Standards API
-    Save data to Parse
-    Implement single sign-in--once user has created a profile and signed in, use Parse's currentUser setting to skip sign in screen from then on.
-    Fix scroll view issue on login screen
+    --Finish "Remaining Steps" and polish the app before 3pm!
 
     
     --debugging--
@@ -108,11 +104,7 @@ Assignment
 
     -- finish all debugging tasks
     -- Create 10 more dummy standards
-    -- Create dummy portfolio items to demo track
-    -- Design and create custom table views for student portfolio views
     -- Persist Photo Storage for Student Assignment Detail View
-    -- Load students from Parse for Assignment Info View Controller
-    
     -- Add Icons to Tab Bar View Controller
 
     ##--Completed--
@@ -127,6 +119,7 @@ Assignment
     -- ~~Move standards API call from app delegate to assignment creation track~~
     -- ~~Implement single sign-in features from Parse~~
     -- ~~Implement swipe to delete assignment from student for Assignment Info View Controller~~
+    -- Load students from Parse for Assignment Info View Controller
     
 ## Copyright notes
 
