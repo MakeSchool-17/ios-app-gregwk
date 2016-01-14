@@ -9,24 +9,16 @@
 import UIKit
 import Parse
 
-class ViewStudentsInClassViewController: UIViewController {
-    
-    var classSelected: Classroom!
+class StudentsDashBoardViewController: UIViewController {
     
     var studentToView: Student!
     
-    var studentsFromQuery: Array<Student>!
-    
-    
-    
-        
-    
-    
+    var studentsFromQuery: [Student]!
     
     @IBOutlet weak var studentsInClassTableView: UITableView!
     
-    @IBAction func backButtonPressed(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func unwindToStudentDashboard(sender: UIStoryboardSegue) {
+        
     }
 
     override func viewDidLoad() {
@@ -37,24 +29,20 @@ class ViewStudentsInClassViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         let nib = UINib(nibName: "studentInClassNib", bundle: nil)
-        studentsInClassTableView.registerNib(nib, forCellReuseIdentifier: "StudentsInClassCell")
+        studentsInClassTableView.registerNib(nib, forCellReuseIdentifier: "StudentCell")
         studentsInClassTableView.reloadData()
-        print("view loaded")
         
-        let query = PFQuery(className: "Student")
+        let query = PFQuery(className: Student.parseClassName())
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             
             if error == nil {
-                print("retrieved \(objects!.count) students.")
                 
                 if let objects = objects {
-                    for student in objects {
-                        print("\(student)")
-                    }
-                    self.studentsFromQuery = objects as! Array<Student>
+                    self.studentsFromQuery = objects as! [Student]
                     self.studentsInClassTableView.reloadData()
                 }
+                
             } else {
                 print("Error: \(error!) \(error!.userInfo)")
             }
@@ -62,32 +50,37 @@ class ViewStudentsInClassViewController: UIViewController {
     
     }
 
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "ShowStudentsInClassSegue" {
+        if segue.identifier == "ShowStudentAssignmentsSegue" {
             let nextVC = segue.destinationViewController as! StudentDetailViewController
-            nextVC.studentSelected = studentToView
+            nextVC.studentSelected = self.studentToView
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if studentsFromQuery != nil && studentsFromQuery.count != 0 {
+        studentsInClassTableView.reloadData()
+        for student in studentsFromQuery {
+            student.saveInBackground()
+            }
         }
     }
 
-    
-    
-
 }
-
-extension ViewStudentsInClassViewController: UITableViewDataSource, UITableViewDelegate {
+extension StudentsDashBoardViewController: UITableViewDataSource, UITableViewDelegate {
+   
     //MARK: Tableview datasource functions
-    
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = studentsInClassTableView.dequeueReusableCellWithIdentifier("StudentsInClassCell") as! StudentInClassTableViewCell
+        let cell = studentsInClassTableView.dequeueReusableCellWithIdentifier("StudentCell") as! StudentInClassTableViewCell
+        
         //MARK: Getting data to display from student
         if studentsFromQuery != nil {
         let studentToDisplay: Student = studentsFromQuery[indexPath.row]
         let studentFirstName = studentToDisplay["firstName"]
         let studentLastName = studentToDisplay["lastName"]
         let studentNumber = studentToDisplay["studentNumber"]
-                //MARK: Setting labels inside cell
+            
+            //MARK: Setting labels inside cell
         cell.studentNameLabel.text = "\(studentLastName), \(studentFirstName)"
         cell.studentNumberLabel.text = "Student Number:  \(studentNumber)"
         }
@@ -105,8 +98,21 @@ extension ViewStudentsInClassViewController: UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         studentToView = studentsFromQuery[indexPath.row]
-        performSegueWithIdentifier("ShowStudentsInClassSegue", sender: nil)
+        performSegueWithIdentifier("ShowStudentAssignmentsSegue", sender: nil)
     }
     
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            let studentToDelete = studentsFromQuery[indexPath.row]
+            studentToDelete.deleteInBackground()
+            let studentIndex = studentsFromQuery.indexOf(studentToDelete)
+            studentsFromQuery.removeAtIndex(studentIndex!)
+            studentsInClassTableView.reloadData()
+        }
+    }
     
 }

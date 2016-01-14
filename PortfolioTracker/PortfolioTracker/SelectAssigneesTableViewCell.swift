@@ -24,7 +24,6 @@ class SelectAssigneesTableViewCell: UITableViewCell {
         studentNumberLabel.text = "\(studentNumber)"
     }
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

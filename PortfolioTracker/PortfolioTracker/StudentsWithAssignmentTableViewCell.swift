@@ -13,6 +13,8 @@ class StudentsWithAssignmentTableViewCell: UITableViewCell {
     
     @IBOutlet weak var studentNameLabel: UILabel!
     
+    @IBOutlet weak var studentNumberLabel: UILabel!
+    
     @IBOutlet weak var turnedInImage: UIImageView!
     
     @IBOutlet weak var passesStandardImage: UIImageView!

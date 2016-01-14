@@ -40,7 +40,7 @@ class StudentDetailViewController: UIViewController {
         let assignment1 = Assignment()
         assignment1.passing = true
         assignment1.submitted = true
-        assignment1.assignmentName = "Test Assignment"
+        assignment1.nameOfAssignment = "Test Assignment"
         studentSelected.assignments.append(assignment1)
     }
     
@@ -64,7 +64,7 @@ extension StudentDetailViewController: UITableViewDataSource, UITableViewDelegat
         let cell = studentAssignmentsTableView.dequeueReusableCellWithIdentifier("StudentDetailCell") as! AssignmentInforForStudentTableViewCell
         if studentSelected.assignments.count != 0 {
             let assignment  = studentSelected.assignments[indexPath.row]
-            cell.assignmentNameLabel.text = assignment.assignmentName
+            cell.assignmentNameLabel.text = assignment.nameOfAssignment
             cell.dateAssignedLabel.text = assignment.dateAssigned
             if (assignment.passing == true) {
                 cell.passesStandardImage.image = UIImage(named: "GreenCheck.png")

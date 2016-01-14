@@ -22,10 +22,7 @@ class CreateNewAssignmentViewController: UIViewController {
     
     @IBOutlet weak var gradeLevelPickerView: UIPickerView!
     
-    var selectedSubject: String!
-    var selectedGradeLevel: String!
-    
-    var newAssignment = Assignment()
+    var newAssignment =  Assignment()
     
     
     let subjectPickerViewData = ["All Subjects", "Math", "Reading", "History", "Science"]
@@ -37,26 +34,19 @@ class CreateNewAssignmentViewController: UIViewController {
     }
     
     @IBAction func continueButtonPressed(sender: AnyObject) {
-        if (validateUserInput() == true) {
-            newAssignment.assignmentName = assignmentNameTextLabel.text
-            
-        }
         
+        if assignmentNameTextLabel.text != "" {
+        
+                newAssignment["nameOfAssignment"] = assignmentNameTextLabel.text
+                newAssignment["submitted"] = false
+                newAssignment["passing"] = false
+                performSegueWithIdentifier("SelectStandardSegue", sender: nil)
+                
+                }
+
     }
     
-    func validateUserInput() -> Bool {
-        if assignmentNameTextLabel.text == nil || assignmentNameTextLabel.text == "" {
-            return false
-        }
-        
-        if selectedGradeLevel == nil || selectedSubject == nil {
-            return false
-        }
-        
-        return true
-            
-        
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,14 +54,13 @@ class CreateNewAssignmentViewController: UIViewController {
         subjectPickerView.delegate = self
         gradeLevelPickerView.delegate = self
         gradeLevelPickerView.dataSource = self
+        
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SelectStandardSegue" {
             let nextVC = segue.destinationViewController as! SelectStandardForAssignmentViewController
-            nextVC.gradeLevel = selectedGradeLevel
-            nextVC.subjectSelected = selectedSubject
-            nextVC.assignmentCreated = newAssignment
+            nextVC.assignmentBeingCreated = newAssignment
         }
     }
     
@@ -103,13 +92,13 @@ extension CreateNewAssignmentViewController: UIPickerViewDataSource, UIPickerVie
         }
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if (pickerView == subjectPickerView) {
-            self.selectedSubject = subjectPickerViewData[row]
-        } else {
-            self.selectedGradeLevel = gradeLevelPickerViewData[row]
-        }
-    }
+//    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        if (pickerView == subjectPickerView) {
+//            self.selectedSubject = subjectPickerViewData[row]
+//        } else {
+//            self.selectedGradeLevel = gradeLevelPickerViewData[row]
+//        }
+//    }
     
     
 }

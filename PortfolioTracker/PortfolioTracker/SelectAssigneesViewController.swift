@@ -11,8 +11,8 @@ import Parse
 
 class SelectAssigneesViewController: UIViewController {
 
-    var standardSelected: Standard!
-    
+    var newAssignment: Assignment!
+
     var studentsSelected: Array<Student> = []
     
     var studentsFromQuery: Array<Student>!
@@ -20,14 +20,27 @@ class SelectAssigneesViewController: UIViewController {
     @IBOutlet weak var studentsTableView: UITableView!
 
     
-    @IBAction func backButtonPressed(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
     @IBAction func assignButtonPressed(sender: AnyObject) {
         
-        performSegueWithIdentifier("UnwindToAssignmentsSegue", sender: nil)
+        newAssignment.saveInBackgroundWithBlock { (success:Bool, error:NSError?) -> Void in
+            print("saved that dang assignment")
+        }
         
+        for student in studentsSelected {
+            var assignments = student["assignments"] as! [Assignment]
+            assignments.append(newAssignment)
+            student["assignments"] = assignments
+            student.saveInBackgroundWithBlock { (success:Bool, error:NSError?) -> Void in
+                print("saved that dang student")
+            }
+        }
+        performSegueWithIdentifier("UnwindToAssignmentsSegue", sender: nil)
+    }
+    
+    
+    
+    @IBAction func backButtonPressed(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -64,7 +77,7 @@ class SelectAssigneesViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "UnwindToAssignmentsSegue" {
             let nextVC = segue.destinationViewController as! AssignmentsListViewController
-            //nextVC.allAssignmentsCreated.append()
+            nextVC.allAssignmentsCreated.append(newAssignment)
             
         }
     }
@@ -105,7 +118,8 @@ extension SelectAssigneesViewController: UITableViewDataSource, UITableViewDeleg
                 studentsSelected.removeAtIndex(IndexOfStudentForRemoval!)
             }
         }
-        studentsTableView.reloadData()
+        let index = [indexPath]
+        studentsTableView.reloadRowsAtIndexPaths(index, withRowAnimation: UITableViewRowAnimation.None)
     }
     
     

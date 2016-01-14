@@ -16,7 +16,7 @@ class Student: PFObject, PFSubclassing {
     var lastName: String!
     var studentNumber: String!
     var assignments: Array<Assignment> = []
-    var classes: Array<String> = []
+    var selectedforAssignment: Bool = false
     
     override class func initialize() {
         struct Static {
@@ -38,7 +38,6 @@ class Student: PFObject, PFSubclassing {
         student["lastName"] = lastName
         student["studentNumber"] = studentNumber
         student["assignments"] = assignments
-        student["classes"] = classes
         
         student.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in

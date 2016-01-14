@@ -14,7 +14,7 @@ class Assignment: PFObject, PFSubclassing {
     
     var dateAssigned: String! = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: .ShortStyle, timeStyle: .ShortStyle)
     var standard: Standard!
-    var assignmentName: String!
+    var nameOfAssignment: String!
     var submitted: Bool = false
     var passing: Bool = false
     var studentWork: Array<UIImage> = []
@@ -39,13 +39,13 @@ class Assignment: PFObject, PFSubclassing {
     }
     
     func updateAssignmentName(newName: String) {
-        self.assignmentName = newName
+        self.nameOfAssignment = newName
     }
     
     func saveToParse(){
         let assignment = PFObject(className: "Assignment")
         assignment["dateAssigned"] = self.dateAssigned
-        assignment["assignmentName"] = self.assignmentName
+        assignment["nameOfAssignment"] = self.nameOfAssignment
         assignment["standard"] = self.standard
         assignment["submitted"] = self.submitted
         assignment["passing"] = self.passing

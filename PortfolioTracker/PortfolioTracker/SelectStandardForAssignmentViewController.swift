@@ -10,11 +10,8 @@ import UIKit
 import Parse
 
 class SelectStandardForAssignmentViewController: UIViewController {
-    
-    let user = PFUser.currentUser()
-    var commonCoreID: String!
-    var allStandardsForJurisdiction: Dictionary<String, AnyObject>!
-    
+
+    var assignmentBeingCreated: Assignment!
     var allApplicableStandards: Array<Standard> = []
     var standardSelected: Standard!
     
@@ -27,6 +24,16 @@ class SelectStandardForAssignmentViewController: UIViewController {
 
     @IBAction func backButtonPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    @IBAction func continueButtonPressed(sender: AnyObject) {
+        if let standardSelected = standardSelected {
+            
+        assignmentBeingCreated.standard = standardSelected
+        performSegueWithIdentifier("SelectAssigneesSegue", sender: nil)
+        }
+        
     }
    
     override func viewDidLoad() {
@@ -48,11 +55,11 @@ class SelectStandardForAssignmentViewController: UIViewController {
         dummyStandard4.shortCode = "2.1.2A"
         dummyStandard5.shortCode = "2.1.2B"
         
-        dummyStandard1.descriptionOfStandard = "Understand the user of variables."
-        dummyStandard2.descriptionOfStandard = "Use constansts correctly."
+        dummyStandard1.descriptionOfStandard = "Understand the use of variables."
+        dummyStandard2.descriptionOfStandard = "Use constants correctly."
         dummyStandard3.descriptionOfStandard = "Use operators for basic computation."
         dummyStandard4.descriptionOfStandard = "Create a function that takes 1 input."
-        dummyStandard5.descriptionOfStandard = "Demonstrate effective use of abstraction"
+        dummyStandard5.descriptionOfStandard = "Demonstrate effective use of abstraction."
         
         allApplicableStandards.append(dummyStandard1)
         allApplicableStandards.append(dummyStandard2)
@@ -68,7 +75,7 @@ class SelectStandardForAssignmentViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "SelectAssigneesSegue" {
             let nextVC = segue.destinationViewController as! SelectAssigneesViewController
-            nextVC.standardSelected = standardSelected
+            nextVC.newAssignment = assignmentBeingCreated
         }
     }
 
@@ -103,6 +110,7 @@ extension SelectStandardForAssignmentViewController: UITableViewDataSource, UITa
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         standardSelected = allApplicableStandards[indexPath.row]
+        assignmentBeingCreated["standard"] = standardSelected
         tableView.reloadData()
         
     }

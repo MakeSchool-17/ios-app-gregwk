@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import Parse
 
 class CreateStudentsForClassViewController: UIViewController {
-    
-    var newlyCreatedClass: Classroom!
 
+    var allStudents: Array<Student> = []
+    
+    var newStudentsCreated: Array<Student> = []
+    
+    
     @IBOutlet weak var studentRosterTableView: UITableView!
     
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -33,14 +37,22 @@ class CreateStudentsForClassViewController: UIViewController {
     }
     
     @IBAction func createClassButtonPressed(sender: AnyObject) {
-        if self.newlyCreatedClass.classRoster.count > 0 {
-            self.performSegueWithIdentifier("UnwindToClassDashboardSegue", sender: nil)
+        if self.allStudents.count > 0 {
+            for student in newStudentsCreated {
+                student.saveToParse()
+            }
+            self.performSegueWithIdentifier("UnwindToStudentsDashboardSegue", sender: nil)
             
         } else {
-            self.outcomeLabel.text = "You haven't enrolled any students yet!"
+            dismissViewControllerAnimated(true, completion: nil)
         }
     }
 
+    func resetTextFields () {
+        firstNameTextField.text = ""
+        lastNameTextField.text = ""
+        studentNumberTextField.text = ""
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +60,22 @@ class CreateStudentsForClassViewController: UIViewController {
         studentRosterTableView.registerNib(nib, forCellReuseIdentifier: "StudentEnrolledCell")
         studentRosterTableView.delegate = self
         studentRosterTableView.dataSource = self
+        
+        let query = PFQuery(className: Student.parseClassName())
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                
+                if let objects = objects {
+                    self.allStudents = objects as! [Student]
+                    self.studentRosterTableView.reloadData()
+                }
+                
+            } else {
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
     }
     
     @IBAction func saveStudentButtonPressed(sender: AnyObject) {
@@ -60,18 +88,13 @@ class CreateStudentsForClassViewController: UIViewController {
         if studentFirstName != "" && studentLastName != "" && studentNumber != "" {
             
             let newStudent = Student()
-            newStudent.firstName = studentFirstName
-            newStudent.lastName = studentLastName
-            newStudent.studentNumber = studentNumber
-            newStudent.classes.append(newlyCreatedClass.className)
-            newStudent.saveToParse()
-            newlyCreatedClass.enrollStudent(newStudent)
-            outcomeLabel.textColor = UIColor.greenColor()
-            outcomeLabel.text = "\(studentFirstName!) \(studentLastName!) added to class!"
+            newStudent["firstName"] = studentFirstName
+            newStudent["lastName"] = studentLastName
+            newStudent["studentNumber"] = studentNumber
+            newStudent["assignments"] = []
+            allStudents.append(newStudent)
+            newStudentsCreated.append(newStudent)
             studentRosterTableView.reloadData()
-            firstNameTextField.text = ""
-            lastNameTextField.text = ""
-            studentNumberTextField.text = ""
             
         } else {
             
@@ -80,10 +103,11 @@ class CreateStudentsForClassViewController: UIViewController {
         }
         
         displayImages()
+        resetTextFields()
         outcomeLabel.hidden = false
         outcomeLabel.fadeOut()
         
-        delay(3.1) {
+        delay(2.1) {
             self.outcomeLabel.hidden = true
             self.outcomeLabel.alpha = 1.0
             self.firstNameValidImage.hidden = true
@@ -94,17 +118,15 @@ class CreateStudentsForClassViewController: UIViewController {
             self.studentNumberValidImage.alpha = 1.0
         }
     }
-
-    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "UnwindToClassDashboardSegue" {
-            let classDashboardVC = segue.destinationViewController as! ClassesViewController
-            classDashboardVC.allClasses.append(newlyCreatedClass)
+        if segue.identifier == "UnwindToStudentDashboardSegue" {
+            let nextVC = segue.destinationViewController as! StudentsDashBoardViewController
+            for student in newStudentsCreated {
+                nextVC.studentsFromQuery.append(student)
+            }
         }
     }
-    
-    
 }
 
 extension CreateStudentsForClassViewController: UITableViewDataSource, UITableViewDelegate {
@@ -151,19 +173,19 @@ extension CreateStudentsForClassViewController: UITableViewDataSource, UITableVi
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("StudentEnrolledCell", forIndexPath: indexPath) as! StudentEnrolledTableViewCell
-        let studentFirstName = newlyCreatedClass?.classRoster[indexPath.row].firstName
-        let studentLastName = newlyCreatedClass?.classRoster[indexPath.row].lastName
-        let studentNumber = newlyCreatedClass?.classRoster[indexPath.row].studentNumber
-        cell.studentNameLabel.text = "\(studentLastName!), \(studentFirstName!)"
-        cell.studentNumberLabel.text = "\(studentNumber!)"
+        let student = allStudents[indexPath.row]
+        let studentName = "\(student["lastName"]), \(student["firstName"])"
+        let studentNumber = "\(student["studentNumber"])"
         
+        cell.studentNameLabel.text = studentName
+        cell.studentNumberLabel.text = studentNumber
+
         return cell
         
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (newlyCreatedClass?.classRoster.count)!
+        return allStudents.count
     }
-    
     
 }

@@ -15,10 +15,6 @@ class AssignmentTableViewCell: UITableViewCell {
     
     @IBOutlet weak var dateCreatedLabel: UILabel!
     
-    @IBOutlet weak var turnedInImage: UIImageView!
-    
-    @IBOutlet weak var passesStandardImage: UIImageView!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -31,21 +27,11 @@ class AssignmentTableViewCell: UITableViewCell {
     }
     
     func setCellDetails(assignment: Assignment) {
-        self.assignmentNameLabel.text = assignment.assignmentName
+        self.assignmentNameLabel.text = assignment["nameOfAssignment"] as? String
         self.dateCreatedLabel.text = assignment.dateAssigned
-        if assignment.submitted == true {
-            self.turnedInImage.image = UIImage(named: "GreenCheck.png")
-            
-            if assignment.passing == true {
-                self.passesStandardImage.image = UIImage(named: "GreenCheck.png")
-            } else {
-                self.passesStandardImage.image = UIImage(named: "RedX.png")
-            }
-        } else {
-            self.turnedInImage.image = UIImage(named: "RedX.png")
-            self.passesStandardImage.image = UIImage(named: "RedX.png")
-            }
+        
         }
+
 }
 
 

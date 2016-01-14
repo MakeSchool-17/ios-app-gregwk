@@ -101,20 +101,18 @@ Assignment
     
     --debugging--
         Scroll View doesnt adjust from open keyboard on LoginViewController
-        Input validation images on student creation screen
         
 
 
 ## Remaining Steps
 
-    --finish all debugging tasks
-    -- Grab Standards from Common Standards API, or just dummy them. 
+    -- finish all debugging tasks
+    -- Create 10 more dummy standards
     -- Create dummy portfolio items to demo track
     -- Design and create custom table views for student portfolio views
-    -- Finish AssignToNewStudentsViewController
     -- Persist Photo Storage for Student Assignment Detail View
     -- Load students from Parse for Assignment Info View Controller
-    -- Implement swipe to delete assignment from student for Assignment Info View Controller
+    
     -- Add Icons to Tab Bar View Controller
 
     ##--Completed--
@@ -128,6 +126,7 @@ Assignment
     -- ~~Implement camera view for assignment creation track~~
     -- ~~Move standards API call from app delegate to assignment creation track~~
     -- ~~Implement single sign-in features from Parse~~
+    -- ~~Implement swipe to delete assignment from student for Assignment Info View Controller~~
     
 ## Copyright notes
 
